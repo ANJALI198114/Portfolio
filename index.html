@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anjali Aggarwal — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- cursor -->
+    <div id="cur"></div>
+    <div id="cur-ring"></div>
+
+    <!-- stars -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- music -->
+    <button id="mbtn" title="Ambient sound">▶</button>
+
+    <!-- ══════════════════════════════════════
+     PRELOADER
+══════════════════════════════════════ -->
+    <div id="preloader">
+        <div id="pre-word"></div>
+        <div id="pre-bar-wrap">
+            <div id="pre-bar"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+    <nav>
+        <a href="#hero" class="nav-logo"><span class="nav-dot"></span>Anjali.</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="mailto:anjaliaggarwal1703@gmail.com" class="nav-btn">Reach Out</a>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-glow hg1"></div>
+        <div class="hero-glow hg2"></div>
+
+        <div class="hero-left">
+            <div class="hero-available"><span class="dot"></span>Available for Opportunities</div>
+            <div class="hero-type" id="hero-type">Software Developer|</div>
+            <div class="hero-hello">Hello, I'm</div>
+            <h1 class="hero-name">
+                <span class="n1">Anjali</span>
+                <span class="n2">Aggarwal</span>
+            </h1>
+            <p class="hero-desc">I turn complex ideas into seamless, high-impact web experiences — building modern,
+                scalable, and performant applications.</p>
+            <div class="hero-btns">
+                <a href="https://drive.google.com/file/d/1MbGWinckJV2-F0vniQK4qxfzIIT9EHZg/view?usp=drivesdk" download
+                    class="btn-fill">Download Resume</a>
+                <a href="#contact" class="btn-outline">Get in Touch</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/ANJALI198114" target="_blank" title="GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/anjaliaggarwal1703" target="_blank" title="LinkedIn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                </a>
+                <a href="https://leetcode.com/ANJALI198114" target="_blank" title="LeetCode">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.23l-3.85 4.13a5.27 5.27 0 0 0-1.33 2.62 5.53 5.53 0 0 0 .06 2.36 5.83 5.83 0 0 0 1.62 2.84l4.28 4.19.04.04c2.25 2.16 5.85 2.13 8.06-.07l2.4-2.39a1.38 1.38 0 0 0-1.95-1.96l-2.4 2.39a3.02 3.02 0 0 1-4.2.04l-4.28-4.19a2.68 2.68 0 0 1 .69-4.39l4.27-4.57c1.06-1.13 3.2-1.27 4.43-.28l3.5 2.83a1.38 1.38 0 0 0 1.73-2.15l-3.5-2.83a4.17 4.17 0 0 0-2.77-1.2l2.01-2.16A1.38 1.38 0 0 0 13.48 0zm-2.87 12.82a1.38 1.38 0 0 0 0 2.76H20.79a1.38 1.38 0 0 0 0-2.76H10.61z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="photo-wrap">
+                <div class="spin-ring"></div>
+                <div class="photo-frame">
+                    <!-- To add your photo: replace below with <img src="photo.jpg" alt="Anjali"/> -->
+                    <div class="photo-ph">
+                        <img src="image.jpeg" alt="Anjali">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <div class="scroll-wheel"></div>SCROLL
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+    <section id="about">
+        <div class="about-wrap">
+            <div class="about-top">
+                <div class="about-mini-photo">
+                    <!-- To add photo: <img src="photo.jpg" alt="Anjali"/> -->
+                    <div class="mini-ph">👩‍💻</div>
+                </div>
+                <div class="about-name-block">
+                    <div class="aname">Anjali Aggarwal</div>
+                    <div class="arole">Aspiring Software Engineer &amp; Web Developer</div>
+                    <p class="abio">I build scalable, modern applications with a strong focus on clean architecture,
+                        delightful UX, and performance. My toolkit spans React, Next.js, TypeScript, Node.js, and
+                        MongoDB — bringing ideas to life from concept to production.</p>
+                    <div class="about-chips">
+                        <div class="chip"><strong>Experience</strong>Internships × 2</div>
+                        <div class="chip"><strong>Specialty</strong>Full Stack</div>
+                        <div class="chip"><strong>Focus</strong>Performance &amp; UX</div>
+                    </div>
+                    <div class="about-action-btns">
+                        <a href="#projects" class="btn-fill" style="font-size:.8rem;padding:.6rem 1.3rem;">View
+                            Projects</a>
+                        <a href="#contact" class="btn-outline" style="font-size:.8rem;padding:.6rem 1.3rem;">Get in
+                            Touch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-body">
+                <div class="about-me-text">
+                    <div class="sec-tag">About Me</div>
+                    <p>I'm an <strong>Aspiring Software Engineer</strong> pursuing B.Tech in CSE (AI) at KIET Group of
+                        Institutions. Passionate about turning complex ideas into user-friendly web applications.</p>
+                    <p>Currently interning at <strong>Proeffico Solutions</strong> after completing my tenure at
+                        <strong>Frisson DevHub</strong>. I love building products that are fast, accessible, and
+                        beautiful.
+                    </p>
+                </div>
+                <div class="edu-wrap">
+                    <div class="sec-tag">Education</div>
+                    <div class="edu-cards">
+                        <div class="edu-card">
+                            <div class="edu-deg">B.Tech — Computer Science &amp; Engineering (AI)</div>
+                            <div class="edu-sch">KIET Group of Institutions</div>
+                            <div class="edu-badges"><span class="edu-badge">Nov 2023 – Present</span><span
+                                    class="edu-badge hi">76%</span></div>
+                        </div>
+                        <div class="edu-card">
+                            <div class="edu-deg">Intermediate — CBSE Board</div>
+                            <div class="edu-sch">Chhaya Public School</div>
+                            <div class="edu-badges"><span class="edu-badge">Apr 2021 – Jul 2022</span><span
+                                    class="edu-badge hi">90%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-wrap">
+                <div class="skills-grid-label">My Skills — Modern Applications | Modern Technologies</div>
+                <div class="skills-icon-grid" id="skills-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════ -->
+    <section id="projects">
+        <div class="proj-wrap">
+            <div class="centered" style="margin-bottom:3rem;">
+                <div class="sec-tag" style="justify-content:center;">My Work</div>
+                <h2 class="sec-h">Featured Projects</h2>
+                <p class="sec-sub">Explore my latest work showcasing modern web technologies and creative solutions.</p>
+            </div>
+            <div class="proj-slider">
+                <!-- Slide 0 -->
+                <div class="proj-slide on" id="ps0">
+                    <div class="proj-canvas-wrap"><canvas id="pc0" width="560" height="350"></canvas></div>
+                    <div>
+                        <div class="proj-tag">Full-Stack Web App</div>
+                        <div class="proj-name">SOCIFY — Swipeverse</div>
+                        <div class="proj-desc">A responsive, unbiased dating web application with secure authentication,
+                            scalable Next.js architecture, and smooth UX. Deployed on Vercel.</div>
+                        <div class="proj-stack-lbl">Key Features</div>
+                        <ul class="proj-feat">
+                            <li>Next.js App Router with TypeScript</li>
+                            <li>Reusable component-based UI</li>
+                            <li>Secure authentication flow</li>
+                            <li>Deployed on Vercel</li>
+                        </ul>
+                        <div class="proj-stack-lbl">Tech Stack</div>
+                        <div class="proj-stack"><span>Next.js</span><span>TypeScript</span><span>App
+                                Router</span><span>Vercel</span></div>
+                        <div class="proj-btns">
+                            <a href="https://socify-xi.vercel.app/" class="btn-live">👁 Live Preview</a>
+                            <a href="https://github.com/anjaliaggarwal1703/socify" class="btn-gh">⌥ GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 1 -->
+                <div class="proj-slide" id="ps1">
+                    <div class="proj-canvas-wrap"><canvas id="pc1" width="560" height="350"></canvas></div>
+                    <div>
+                        <div class="proj-tag">Frontend / Animation</div>
+                        <div class="proj-name">LAZAREV — Animated Website</div>
+                        <div class="proj-desc">Animation-driven website with scroll-based interactions, interactive UI
+                            effects, and modern UI/UX principles built with HTML, CSS and JavaScript.</div>
+                        <div class="proj-stack-lbl">Key Features</div>
+                        <ul class="proj-feat">
+                            <li>Scroll-based animations</li>
+                            <li>Interactive UI effects</li>
+                            <li>Modern UI/UX principles</li>
+                            <li>Fully responsive</li>
+                        </ul>
+                        <div class="proj-stack-lbl">Tech Stack</div>
+                        <div class="proj-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GSAP</span>
+                        </div>
+                        <div class="proj-btns">
+                            <a href="https://anjali198114.github.io/Lazarev/" class="btn-live">👁 Live Preview</a>
+                            <a href="https://github.com/anjali198114/Lazarev" class="btn-gh">⌥ GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="proj-slide" id="ps2">
+                    <div class="proj-canvas-wrap"><canvas id="pc2" width="560" height="350"></canvas></div>
+                    <div>
+                        <div class="proj-tag">Full-Stack / Real-Time</div>
+                        <div class="proj-name">Realtime Location Tracker</div>
+                        <div class="proj-desc">End-to-end GPS tracking with live map visualization, movement history,
+                            and WebSocket communication for minimal-latency multi-user updates.</div>
+                        <div class="proj-stack-lbl">Key Features</div>
+                        <ul class="proj-feat">
+                            <li>Real-time GPS via Socket.io</li>
+                            <li>Leaflet.js + Google Maps API</li>
+                            <li>Multi-user backend</li>
+                            <li>Route tracking & history</li>
+                        </ul>
+                        <div class="proj-stack-lbl">Tech Stack</div>
+                        <div class="proj-stack">
+                            <span>Node.js</span><span>Express</span><span>Socket.io</span><span>Leaflet.js</span>
+                        </div>
+                        <div class="proj-btns">
+                            <a href="https://realtime-location-tracking-9jkc.onrender.com/" class="btn-live">👁 Live Preview</a>
+                            <a href="https://github.com/anjali198114/Realtime-Location-Tracker" class="btn-gh">⌥ GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-controls">
+                <button class="proj-arrow" id="pp">←</button>
+                <div class="proj-dots" id="pdots"></div>
+                <div class="proj-count" id="pcount"><strong>01</strong> / 03</div>
+                <button class="proj-arrow" id="pn">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     EXPERIENCE
+══════════════════════════════════════ -->
+    <section id="experience">
+        <div class="exp-wrap">
+            <h2 class="exp-h">Experience</h2>
+
+            <div class="tl-outer" id="tl-outer">
+                <!-- CARD ABOVE (internship 1) -->
+                <div class="tl-above-row">
+                    <div>
+                        <div class="tl-card above-card" id="tlc1">
+                            <div class="tl-role">Software Engineer Intern</div>
+                            <div class="tl-co">Frisson DevHub</div>
+                            <div class="tl-period">Mar 2025 – Jun 2025</div>
+                            <ul class="tl-ul">
+                                <li>Built responsive frontend components using HTML, CSS, JS &amp; React.js — 95%
+                                    cross-device compatibility.</li>
+                                <li>Improved UI performance by 30% via reusable React components.</li>
+                                <li>Collaborated with 5+ designers &amp; backend devs to deliver scalable UI.</li>
+                                <li>Applied UI/UX best practices and component-based architecture.</li>
+                            </ul>
+                        </div>
+                        <div class="tl-conn-above"></div>
+                    </div>
+                    <div class="tl-empty"></div>
+                </div>
+
+                <!-- THE LINE -->
+                <div class="tl-line-bg">
+                    <div class="tl-line-fill" id="tlf"></div>
+                </div>
+
+                <!-- DOTS ON LINE -->
+                <div class="tl-dots-row">
+                    <div class="tl-dot-pin" id="tld1" style="left:25%"></div>
+                    <div class="tl-dot-pin" id="tld2" style="left:75%"></div>
+                </div>
+
+                <!-- CARD BELOW (internship 2) -->
+                <div class="tl-below-row">
+                    <div class="tl-empty"></div>
+                    <div>
+                        <div class="tl-conn-below"></div>
+                        <div class="tl-card" id="tlc2">
+                            <div class="tl-role">Associate Software Engineer Intern</div>
+                            <div class="tl-co">Proeffico Solutions</div>
+                            <div class="tl-period">Mar 2026 – Present</div>
+                            <ul class="tl-ul">
+                                <li>Assisting in development of web applications using modern technologies.</li>
+                                <li>Working on both frontend &amp; backend — UI components and API integration.</li>
+                                <li>Collaborating with team members on requirements and functionality.</li>
+                                <li>Applying professional dev practices, version control &amp; debugging.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CERTIFICATIONS
+══════════════════════════════════════ -->
+    <section id="certifications">
+        <div class="certs-wrap">
+            <div class="centered" style="margin-bottom:3rem;">
+                <div class="sec-tag" style="justify-content:center;">Credentials &amp; Achievements</div>
+                <h2 class="sec-h">Premium Certificates</h2>
+                <p class="sec-sub">Hover each certificate to reveal — earned through dedication and continuous learning.
+                </p>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-env">
+                        <div class="cert-bg" style="background:linear-gradient(160deg,#1a0d2e,#4a1560);"></div>
+                        <div class="cert-flap" style="background:#130924;"></div>
+                        <div href="" class="cert-paper">
+                            <div class="cert-wax">☁️</div>
+                            <div class="cert-p1">Certificate</div>
+                            <div class="cert-p2">of Achievement</div>
+                            <div class="cert-pline"></div>
+                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
+                        </div>
+                        <div class="cert-bottom" style="background:linear-gradient(135deg,#1a0d2e,#6b21a8);">
+                            <div class="cert-bname">AWS Certified AI Practitioner</div>
+                            <div class="cert-bmeta"><span>☁️ Amazon Web Services</span><span>📅 Mar 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-env">
+                        <div class="cert-bg" style="background:linear-gradient(160deg,#2d0a1f,#6b1050);"></div>
+                        <div class="cert-flap" style="background:#230818;"></div>
+                        <div class="cert-paper">
+                            <div class="cert-wax">🏅</div>
+                            <div class="cert-p1">Certificate</div>
+                            <div class="cert-p2">of Achievement</div>
+                            <div class="cert-pline"></div>
+                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
+                        </div>
+                        <div class="cert-bottom" style="background:linear-gradient(135deg,#2d0a1f,#be185d);">
+                            <div class="cert-bname">AWS Certified Cloud Practitioner</div>
+                            <div class="cert-bmeta"><span>☁️ Amazon Web Services</span><span>📅 Jan 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-env">
+                        <div class="cert-bg" style="background:linear-gradient(160deg,#1a0820,#3d1060);"></div>
+                        <div class="cert-flap" style="background:#110618;"></div>
+                        <div class="cert-paper">
+                            <div class="cert-wax">🔐</div>
+                            <div class="cert-p1">Certificate</div>
+                            <div class="cert-p2">of Achievement</div>
+                            <div class="cert-pline"></div>
+                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
+                        </div>
+                        <div class="cert-bottom" style="background:linear-gradient(135deg,#1a0820,#7c3aed);">
+                            <div class="cert-bname">Palo Alto Networks — Cybersecurity Foundation</div>
+                            <div class="cert-bmeta"><span>🛡️ Palo Alto Networks</span><span>📅 Jun 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+    <section id="contact">
+        <div class="contact-wrap">
+            <div class="contact-left">
+                <h2 class="ctitle">Let's Work <span>Together</span></h2>
+                <p class="csub">Open to full-time roles, internships, and freelance projects.</p>
+                <p class="csub">Reach me at: <a href="mailto:anjaliaggarwal1703@gmail.com"
+                        class="cemail">anjaliaggarwal1703@gmail.com</a></p>
+                <div class="contact-icons">
+                    <a class="c-icon" href="https://github.com/ANJALI198114" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a class="c-icon" href="https://linkedin.com/in/anjali-aggarwal" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
+                        </svg>
+                    </a>
+                    <a class="c-icon" href="mailto:anjaliaggarwal1703@gmail.com">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,12 2,6" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="laptop-visual">
+                    <svg width="260" height="185" viewBox="0 0 260 185">
+                        <rect x="30" y="15" width="200" height="128" rx="10" fill="#1a0d28"
+                            stroke="rgba(255,45,120,0.25)" stroke-width="1.5" />
+                        <rect x="40" y="24" width="180" height="110" rx="6" fill="#0e0614" />
+                        <rect x="52" y="36" width="75" height="3.5" rx="2" fill="rgba(255,45,120,0.6)" />
+                        <rect x="52" y="46" width="115" height="3.5" rx="2" fill="rgba(155,48,208,0.5)" />
+                        <rect x="62" y="56" width="85" height="3.5" rx="2" fill="rgba(224,64,251,0.4)" />
+                        <rect x="62" y="66" width="55" height="3.5" rx="2" fill="rgba(255,45,120,0.35)" />
+                        <rect x="52" y="76" width="95" height="3.5" rx="2" fill="rgba(155,48,208,0.45)" />
+                        <rect x="62" y="86" width="75" height="3.5" rx="2" fill="rgba(224,64,251,0.35)" />
+                        <rect x="52" y="96" width="105" height="3.5" rx="2" fill="rgba(255,45,120,0.5)" />
+                        <rect x="62" y="106" width="45" height="3.5" rx="2" fill="rgba(155,48,208,0.3)" />
+                        <rect x="52" y="116" width="8" height="3.5" rx="1.5" fill="rgba(255,45,120,0.8)">
+                            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="143" width="240" height="10" rx="3" fill="#1a0d28"
+                            stroke="rgba(255,45,120,0.18)" stroke-width="1" />
+                        <rect x="95" y="143" width="70" height="4" rx="2" fill="#0e0614" />
+                        <circle cx="130" cy="20" r="2.5" fill="rgba(255,45,120,0.5)" />
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <div class="cform">
+                    <div class="crow">
+                        <input class="cfield" type="text" placeholder="Your Name" />
+                        <input class="cfield" type="email" placeholder="Your Email" />
+                    </div>
+                    <select class="cfield">
+                        <option value="" style="background:#0e0614">Something in mind?</option>
+                        <option style="background:#0e0614">Full-time Role</option>
+                        <option style="background:#0e0614">Internship</option>
+                        <option style="background:#0e0614">Freelance Project</option>
+                        <option style="background:#0e0614">Collaboration</option>
+                    </select>
+                    <textarea class="cfield" placeholder="Explain your idea..."></textarea>
+                    <button class="btn-send">Send Message ✦</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+    <footer>
+        <div class="foot-name">Anjali Aggarwal</div>
+        <div class="foot-socials">
+            <a href="https://github.com/ANJALI198114" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/anjali-aggarwal" target="_blank">LinkedIn</a>
+            <a href="https://leetcode.com/ANJALI198114" target="_blank">LeetCode</a>
+            <a href="mailto:anjaliaggarwal1703@gmail.com">Email</a>
+        </div>
+        <div class="foot-quote">"Success is when preparation meets opportunity."</div>
+        <div class="foot-copy">© 2026 Anjali Aggarwal. All rights reserved.</div>
+    </footer>
+
+    <script>
+        /* ════════════════════
+           STARS (dim, small)
+        ════════════════════ */
+        const SC = document.getElementById('star-canvas');
+        const sx = SC.getContext('2d');
+        function rsz() { SC.width = window.innerWidth; SC.height = window.innerHeight; }
+        rsz(); window.addEventListener('resize', rsz);
+        const ST = Array.from({ length: 140 }, () => ({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            r: Math.random() * 0.9 + 0.2,
+            o: Math.random() * 0.3 + 0.05,
+            s: (Math.random() * 0.08 + 0.02) * (Math.random() < 0.5 ? 1 : -1)
+        }));
+        (function drawSt() {
+            sx.clearRect(0, 0, SC.width, SC.height);
+            ST.forEach(s => {
+                s.o += s.s;
+                if (s.o > 0.38 || s.o < 0.04) s.s *= -1;
+                sx.beginPath(); sx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                sx.fillStyle = `rgba(255,200,230,${s.o})`; sx.fill();
+            });
+            requestAnimationFrame(drawSt);
+        })();
+
+        /* ════════════════════
+           CURSOR
+        ════════════════════ */
+        const curEl = document.getElementById('cur');
+        const ringEl = document.getElementById('cur-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX; my = e.clientY;
+            curEl.style.left = mx + 'px'; curEl.style.top = my + 'px';
+        });
+        (function animCur() {
+            rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
+            ringEl.style.left = rx + 'px'; ringEl.style.top = ry + 'px';
+            requestAnimationFrame(animCur);
+        })();
+        document.querySelectorAll('a,button,.cert-card,.skill-item,.proj-arrow').forEach(el => {
+            el.addEventListener('mouseenter', () => { curEl.style.transform = 'translate(-50%,-50%) scale(2.2)'; ringEl.style.transform = 'translate(-50%,-50%) scale(1.6)'; });
+            el.addEventListener('mouseleave', () => { curEl.style.transform = 'translate(-50%,-50%) scale(1)'; ringEl.style.transform = 'translate(-50%,-50%) scale(1)'; });
+        });
+
+        /* ════════════════════
+           PRELOADER
+        ════════════════════ */
+        const words = ['Hello', 'Hola', 'Bonjour', 'नमस्ते', 'Ciao', 'Olá', '你好', 'مرحبا', 'Hallo'];
+        const preW = document.getElementById('pre-word');
+        const preB = document.getElementById('pre-bar');
+        const preEl = document.getElementById('preloader');
+        let wi = 0;
+        function showNext() {
+            if (wi >= words.length) {
+                preEl.style.opacity = '0';
+                setTimeout(() => { preEl.style.display = 'none'; startType(); }, 700);
+                return;
+            }
+            preW.style.opacity = '0';
+            setTimeout(() => {
+                preW.textContent = words[wi++];
+                preW.style.opacity = '1';
+                preB.style.width = ((wi / words.length) * 100) + '%';
+                setTimeout(showNext, wi === words.length ? 600 : 380);
+            }, 150);
+        }
+        setTimeout(showNext, 200);
+
+        /* ════════════════════
+           TYPEWRITER
+        ════════════════════ */
+        const roles = ['Aspiring Software Engineer', 'Web Developer', 'Frontend Developer', 'Full Stack Developer'];
+        let ri = 0, ci = 0, del = false;
+        const typeEl = document.getElementById('hero-type');
+        function startType() {
+            function tick() {
+                const r = roles[ri];
+                if (!del) { ci++; typeEl.textContent = r.slice(0, ci) + '|'; if (ci >= r.length) { del = true; setTimeout(tick, 1300); return; } }
+                else { ci--; typeEl.textContent = r.slice(0, ci) + '|'; if (ci <= 0) { del = false; ri = (ri + 1) % roles.length; setTimeout(tick, 280); return; } }
+                setTimeout(tick, del ? 50 : 80);
+            }
+            tick();
+        }
+
+        /* ════════════════════
+           NAV ACTIVE
+        ════════════════════ */
+        const allSecs = document.querySelectorAll('section[id]');
+        const navAs = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            allSecs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+            navAs.forEach(a => a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--white)' : '');
+        });
+
+        /* ════════════════════
+           SKILLS GRID
+        ════════════════════ */
+        const skillData = [
+            { n: 'React.js', c: '#61DAFB', s: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.139" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2" cx="12" cy="12"/><ellipse rx="11" ry="4.2" cx="12" cy="12" transform="rotate(60 12 12)"/><ellipse rx="11" ry="4.2" cx="12" cy="12" transform="rotate(120 12 12)"/></g></svg>' },
+            { n: 'Next.js', c: '#fff', s: '<svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/></svg>' },
+            { n: 'JavaScript', c: '#F7DF1E', s: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#F7DF1E" rx="2"/><path d="M6.5 19.5l1.5-1c.3.6.6 1 1.3 1 .7 0 1.1-.3 1.1-1.4v-6h2v6.1c0 2.3-1.3 3.3-3.2 3.3-1.7 0-2.7-.9-3.2-2zm8-.5l1.5-1c.4.7 1 1.2 2 1.2.8 0 1.3-.4 1.3-1 0-.7-.5-.9-1.4-1.3l-.5-.2c-1.4-.6-2.3-1.4-2.3-3 0-1.5 1.1-2.7 2.9-2.7 1.3 0 2.2.5 2.8 1.6l-1.5 1c-.3-.6-.7-.8-1.3-.8-.6 0-1 .4-1 .8 0 .6.4.8 1.2 1.2l.5.2c1.7.7 2.6 1.5 2.6 3.1 0 1.8-1.4 2.8-3.3 2.8-1.8 0-3-.9-3.5-2.1z" fill="#333"/></svg>' },
+            { n: 'TypeScript', c: '#3178C6', s: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#3178C6" rx="2"/><path d="M3 12.5h6v1.5H7V20H5.5v-6H3zm11 0v1.3c-.5-.3-1-.5-1.6-.5-.9 0-1.4.4-1.4.9s.3.7 1.2 1.1l.4.2c1.6.6 2.4 1.4 2.4 2.8 0 1.7-1.3 2.7-3.2 2.7-1.2 0-2.1-.4-2.8-1l.9-1.2c.5.5 1.2.8 1.9.8 1 0 1.5-.5 1.5-1.1 0-.6-.3-.9-1.3-1.3l-.4-.2c-1.4-.6-2.1-1.4-2.1-2.7 0-1.5 1.2-2.5 3-2.5.9 0 1.8.3 2.5.7z" fill="white"/></svg>' },
+            { n: 'HTML', c: '#E34F26', s: '<svg viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157z"/></svg>' },
+            { n: 'CSS', c: '#1572B6', s: '<svg viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53z"/></svg>' },
+            { n: 'Node.js', c: '#339933', s: '<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 1.85c-.27 0-.55.07-.78.2L3.78 6.35C3.3 6.6 3 7.1 3 7.65v8.69c0 .56.3 1.06.78 1.33l7.44 4.29c.46.26 1.05.26 1.51 0l7.44-4.29c.48-.27.78-.77.78-1.33V7.65c0-.55-.3-1.05-.78-1.3L12.78 2.05c-.23-.13-.51-.2-.78-.2zm0 2.26l6.15 3.54v7.1L12 18.29l-6.15-3.54V7.65L12 4.11z"/></svg>' },
+            { n: 'Express', c: '#aaa', s: '<svg viewBox="0 0 24 24"><path d="M24 18.6c-.6.3-1 .2-1.4-.3L17 10.9v7.4H15.5V8h1.1l.3 1.4c1.3-1.8 2.8-2.2 4.4-1.4l-1.3 2c-.9-.4-1.8-.2-2.5.6l4.8 6.4 1.7-1zm-12.5-1c0 .8-.3 1.5-.8 2s-1.2.7-2.1.7c-1.6 0-2.6-.8-3-2.4l1.6-.5c.2.9.6 1.3 1.4 1.3.7 0 1.1-.4 1.1-1.1V8H11v9.6z" fill="#aaa"/></svg>' },
+            { n: 'MongoDB', c: '#47A248', s: '<svg viewBox="0 0 24 24" fill="#47A248"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.051-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/></svg>' },
+            { n: 'Python', c: '#3776AB', s: '<svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.961 3.403 5.961h2.031v-2.867s-.109-3.402 3.35-3.402h5.769s3.24.052 3.24-3.131V3.129S18.28 0 11.914 0zM8.708 1.81a1.051 1.051 0 110 2.1 1.051 1.051 0 010-2.1z" fill="#3776AB"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.1S24 18.211 24 12.031c0-6.18-3.403-5.961-3.403-5.961h-2.031v2.867s.109 3.402-3.35 3.402H9.447S6.207 12.287 6.207 15.47v5.401S5.72 24 12.086 24zm3.206-1.81a1.051 1.051 0 110-2.1 1.051 1.051 0 010 2.1z" fill="#ffd43b"/></svg>' },
+            { n: 'Git', c: '#F05032', s: '<svg viewBox="0 0 24 24" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>' },
+            { n: 'AWS', c: '#FF9900', s: '<svg viewBox="0 0 24 24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335c-.128.088-.208.12-.287.12-.112 0-.224-.056-.336-.176a3.44 3.44 0 01-.287-.375 6.18 6.18 0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.368-1.3-.368-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 01-.28.104.488.488 0 01-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 01.224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 011.246-.151c.95 0 1.644.216 2.091.647.44.43.663 1.085.663 1.963zm17.3 6.744c-2.43 1.794-5.96 2.75-9 2.75-4.255 0-8.088-1.573-10.985-4.189-.228-.206-.024-.487.251-.326 3.128 1.818 6.997 2.914 10.993 2.914 2.695 0 5.659-.559 8.386-1.72.407-.184.752.267.355.571z" fill="#FF9900"/><path d="M20.905 14.063c-.311-.399-2.053-.192-2.845-.097-.238.03-.273-.178-.06-.334 1.388-.977 3.669-.694 3.934-.368.266.333-.073 2.614-1.375 3.708-.198.17-.391.08-.302-.14.295-.732.955-2.37.648-2.769z" fill="#FF9900"/></svg>' },
+            { n: 'Socket.io', c: '#fff', s: '<svg viewBox="0 0 24 24" fill="white"><path d="M11.9 2C6.4 2 2 6.5 2 12s4.4 10 9.9 10c5.5 0 10-4.5 10-10S17.4 2 11.9 2zm-.2 4.3l-5.1 7.8h4.5l-.7 3.7 5.1-7.8h-4.4l.6-3.7z"/></svg>' },
+            { n: 'Leaflet', c: '#199900', s: '<svg viewBox="0 0 24 24" fill="#199900"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>' },
+            { n: 'SQL', c: '#4479A1', s: '<svg viewBox="0 0 24 24" fill="#4479A1"><path d="M12 3C7.59 3 4 4.34 4 6v12c0 1.66 3.59 3 8 3s8-1.34 8-3V6c0-1.66-3.59-3-8-3zm0 1.5c3.87 0 6.5 1.12 6.5 1.5S15.87 7.5 12 7.5 5.5 6.38 5.5 6s2.63-1.5 6.5-1.5zm0 15c-3.87 0-6.5-1.12-6.5-1.5v-1.76c1.34.87 3.84 1.26 6.5 1.26s5.16-.39 6.5-1.26V18c0 .38-2.63 1.5-6.5 1.5zm0-4.5c-3.87 0-6.5-1.12-6.5-1.5v-1.76C6.84 12.61 9.34 13 12 13s5.16-.39 6.5-1.26V13.5c0 .38-2.63 1.5-6.5 1.5zm0-4.5c-3.87 0-6.5-1.12-6.5-1.5V7.74C6.84 8.61 9.34 9 12 9s5.16-.39 6.5-1.26V9c0 .38-2.63 1.5-6.5 1.5z"/></svg>' },
+            { n: 'Java', c: '#ED8B00', s: '<svg viewBox="0 0 24 24" fill="#ED8B00"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149m-.575-2.627s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218m4.84-4.458c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573"/></svg>' },
+        ];
+        const sg = document.getElementById('skills-grid');
+        skillData.forEach(s => {
+            const d = document.createElement('div');
+            d.className = 'skill-item';
+            d.innerHTML = s.s + '<span>' + s.n + '</span>';
+            sg.appendChild(d);
+        });
+
+        /* ════════════════════
+           PROJECT CANVAS DRAWS
+        ════════════════════ */
+        function rr(ctx, x, y, w, h, r) {
+            ctx.beginPath(); ctx.moveTo(x + r, y); ctx.lineTo(x + w - r, y); ctx.arcTo(x + w, y, x + w, y + r, r);
+            ctx.lineTo(x + w, y + h - r); ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+            ctx.lineTo(x + r, y + h); ctx.arcTo(x, y + h, x, y + h - r, r);
+            ctx.lineTo(x, y + r); ctx.arcTo(x, y, x + r, y, r); ctx.closePath();
+        }
+        function drawSwipe(cv) {
+            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
+            c.fillStyle = '#1a2035'; c.fillRect(0, 0, W, H);
+            const g = c.createRadialGradient(W * .7, H * .3, 10, W * .7, H * .3, 180);
+            g.addColorStop(0, 'rgba(155,48,208,0.1)'); g.addColorStop(1, 'transparent');
+            c.fillStyle = g; c.fillRect(0, 0, W, H);
+            const px = W * .38, py = H * .06, pw = W * .23, ph = H * .78;
+            c.fillStyle = '#111'; rr(c, px, py, pw, ph, 16); c.fill();
+            c.strokeStyle = '#333'; c.lineWidth = 1.5; rr(c, px, py, pw, ph, 16); c.stroke();
+            c.fillStyle = '#fff'; rr(c, px + 5, py + 16, pw - 10, ph - 32, 7); c.fill();
+            [[px + 10, py + 28, '#ffb5c8', pw - 36], [px + 20, py + 58, '#c8e6ff', pw - 36], [px + 10, py + 88, '#ffb5c8', pw - 42], [px + 20, py + 118, '#c8e6ff', pw - 38]].forEach(([x, y, col, w2]) => { c.fillStyle = col; rr(c, x, y, w2, 18, 7); c.fill(); });
+            ['#ff2d78', '#ff6eb4', '#e040fb'].forEach((col, i) => { c.fillStyle = col; c.font = '15px serif'; c.fillText('♥', W * .3 + i * 20, H * .11 + i * 7); });
+            c.fillStyle = '#fff'; c.font = 'bold 19px Inter,sans-serif'; c.textAlign = 'center'; c.fillText('SWIPEVERSE', W / 2, H * .88);
+            c.fillStyle = 'rgba(255,255,255,0.45)'; c.font = '9px Inter'; c.fillText('UNBIASED DATING APP', W / 2, H * .94);
+        }
+        function drawLaz(cv) {
+            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
+            c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
+            c.strokeStyle = 'rgba(255,255,255,0.12)'; c.lineWidth = 1; c.beginPath(); c.moveTo(0, 38); c.lineTo(W, 38); c.stroke();
+            c.fillStyle = '#fff'; c.font = 'bold 13px Inter'; c.textAlign = 'left'; c.fillText('LAZAREV.', 20, 24);
+            c.font = 'bold 46px Georgia,serif'; c.fillText('AI & ML PR', 20, 115);
+            c.fillStyle = '#22c55e'; c.beginPath(); c.arc(268, 94, 26, 0, Math.PI * 2); c.fill();
+            c.fillStyle = '#fff'; c.font = '18px sans-serif'; c.textAlign = 'center'; c.fillText('✏', 268, 102);
+            c.font = 'bold 46px Georgia,serif'; c.textAlign = 'left'; c.fillText('ODUCT', 290, 115);
+            c.fillText('DESIGN AGENCY', 20, 170);
+            c.fillStyle = 'rgba(255,255,255,0.4)'; c.font = '11px Inter'; c.textAlign = 'center';
+            c.fillText('We partner with AI & ML businesses', W / 2, 208);
+        }
+        function drawMap(cv) {
+            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
+            c.fillStyle = '#e8e0d0'; c.fillRect(0, 0, W, H);
+            c.fillStyle = '#a8d4e8'; c.fillRect(0, H * .62, W * .16, H * .38); c.fillRect(W * .58, H * .5, W * .42, H * .5);
+            c.fillStyle = '#d4e8c0'; c.fillRect(W * .1, H * .1, W * .34, H * .42); c.fillRect(W * .5, H * .05, W * .44, H * .55);
+            c.strokeStyle = 'rgba(255,255,255,0.45)'; c.lineWidth = 0.7;
+            for (let i = 0; i < 8; i++) { c.beginPath(); c.moveTo(0, i * H / 7); c.lineTo(W, i * H / 7); c.stroke(); }
+            for (let i = 0; i < 10; i++) { c.beginPath(); c.moveTo(i * W / 9, 0); c.lineTo(i * W / 9, H); c.stroke(); }
+            c.fillStyle = 'rgba(80,60,40,0.5)'; c.font = '9px sans-serif'; c.textAlign = 'center';
+            [['India', W * .65, H * .62], ['Pakistan', W * .28, H * .35], ['New Delhi', W * .5, H * .52]].forEach(([t, x, y]) => c.fillText(t, x, y));
+            const px = W * .5, py = H * .44;
+            c.fillStyle = '#e53935'; c.beginPath(); c.arc(px, py - 13, 12, 0, Math.PI * 2); c.fill();
+            c.beginPath(); c.moveTo(px - 10, py - 13); c.lineTo(px + 10, py - 13); c.lineTo(px, py + 4); c.fill();
+            c.fillStyle = '#fff'; c.beginPath(); c.arc(px, py - 15, 5, 0, Math.PI * 2); c.fill();
+            c.fillStyle = 'rgba(255,255,255,0.92)'; rr(c, 4, 4, 122, 24, 5); c.fill();
+            c.fillStyle = '#333'; c.font = 'bold 11px Inter'; c.textAlign = 'left'; c.fillText('Active Users: 1', 10, 20);
+        }
+        drawSwipe(document.getElementById('pc0'));
+        drawLaz(document.getElementById('pc1'));
+        drawMap(document.getElementById('pc2'));
+
+        /* ════════════════════
+           PROJECT CAROUSEL
+        ════════════════════ */
+        let curP = 0;
+        const slides = document.querySelectorAll('.proj-slide');
+        const dotsC = document.getElementById('pdots');
+        const countEl = document.getElementById('pcount');
+        dotsC.innerHTML = [0, 1, 2].map(i => `<div class="proj-dot${i === 0 ? ' on' : ''}" data-i="${i}"></div>`).join('');
+        dotsC.querySelectorAll('.proj-dot').forEach(d => d.addEventListener('click', () => goP(+d.dataset.i)));
+        function goP(n) {
+            slides[curP].classList.remove('on'); curP = n; slides[curP].classList.add('on');
+            dotsC.querySelectorAll('.proj-dot').forEach((d, i) => d.classList.toggle('on', i === curP));
+            countEl.innerHTML = `<strong>${String(curP + 1).padStart(2, '0')}</strong> / 03`;
+        }
+        document.getElementById('pn').onclick = () => goP((curP + 1) % 3);
+        document.getElementById('pp').onclick = () => goP((curP + 2) % 3);
+
+        /* ════════════════════
+           EXPERIENCE TIMELINE
+        ════════════════════ */
+        const tlOuter = document.getElementById('tl-outer');
+        if (tlOuter) {
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    io.disconnect();
+                    const fill = document.getElementById('tlf');
+                    const d1 = document.getElementById('tld1');
+                    const d2 = document.getElementById('tld2');
+                    const c1 = document.getElementById('tlc1');
+                    const c2 = document.getElementById('tlc2');
+                    setTimeout(() => fill.style.width = '28%', 200);
+                    setTimeout(() => { d1.classList.add('lit'); c1.classList.add('show'); }, 900);
+                    setTimeout(() => fill.style.width = '80%', 1400);
+                    setTimeout(() => { d2.classList.add('lit'); c2.classList.add('show'); }, 2100);
+                }
+            }, { threshold: 0.3 });
+            io.observe(tlOuter);
+        }
+
+        /* ════════════════════
+           MUSIC
+        ════════════════════ */
+        let playing = false, osc = null, gain = null, actx = null;
+        document.getElementById('mbtn').addEventListener('click', () => {
+            if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+            if (!playing) {
+                gain = actx.createGain(); gain.gain.value = 0.05; gain.connect(actx.destination);
+                osc = actx.createOscillator(); osc.type = 'sine'; osc.frequency.value = 220;
+                osc.connect(gain); osc.start(); playing = true;
+                document.getElementById('mbtn').textContent = '⏸';
+            } else {
+                osc.stop(); playing = false;
+                document.getElementById('mbtn').textContent = '▶';
+            }
+        });
+    </script>
+</body>
+
+</html>
