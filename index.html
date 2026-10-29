@@ -4,727 +4,687 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anjali Aggarwal — Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <title>Anjali Aggarwal — AI Engineer &amp; Data Science Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Anjali Aggarwal — final-year B.Tech CSE (AI) student building churn models, customer analytics, RAG and LLM pipelines. RetainIQ, RAG Teaching Assistant, Career Copilot." />
+    <meta name="author" content="Anjali Aggarwal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Anjali Aggarwal — AI Engineer &amp; Data Science Portfolio" />
+    <meta property="og:description"
+        content="Churn modelling, customer segmentation, SQL feature engineering, RAG and LLM pipelines." />
+    <meta property="og:image" content="image.jpeg" />
+    <meta name="theme-color" content="#07040a" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23140c1c'/%3E%3Ctext x='32' y='44' font-size='34' font-weight='800' text-anchor='middle' fill='%23ff2d78' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
 
-    <!-- cursor -->
-    <div id="cur"></div>
-    <div id="cur-ring"></div>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
 
-    <!-- stars -->
-    <canvas id="star-canvas"></canvas>
-
-    <!-- music -->
-    <button id="mbtn" title="Ambient sound">▶</button>
-
-    <!-- ══════════════════════════════════════
-     PRELOADER
-══════════════════════════════════════ -->
-    <div id="preloader">
-        <div id="pre-word"></div>
-        <div id="pre-bar-wrap">
-            <div id="pre-bar"></div>
-        </div>
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+        <div class="pre-mark">Anjali.</div>
+        <div class="pre-track"><div class="pre-fill"></div></div>
     </div>
 
-    <!-- ══════════════════════════════════════
-     NAV
-══════════════════════════════════════ -->
-    <nav>
+    <!-- NAV -->
+    <nav aria-label="Primary">
         <a href="#hero" class="nav-logo"><span class="nav-dot"></span>Anjali.</a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certs</a></li>
+            <li><a href="#credentials">Credentials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="mailto:anjaliaggarwal1703@gmail.com" class="nav-btn">Reach Out</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="nav-links">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+        </button>
     </nav>
 
-    <!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
-    <section id="hero">
-        <div class="hero-glow hg1"></div>
-        <div class="hero-glow hg2"></div>
+    <main>
+        <!-- ═════════ HERO ═════════ -->
+        <section id="hero">
+            <div class="hero-glow hg1"></div>
+            <div class="hero-glow hg2"></div>
 
-        <div class="hero-left">
-            <div class="hero-available"><span class="dot"></span>Available for Opportunities</div>
-            <div class="hero-type" id="hero-type">Software Developer|</div>
-            <div class="hero-hello">Hello, I'm</div>
-            <h1 class="hero-name">
-                <span class="n1">Anjali</span>
-                <span class="n2">Aggarwal</span>
-            </h1>
-            <p class="hero-desc">I turn complex ideas into seamless, high-impact web experiences — building modern,
-                scalable, and performant applications.</p>
-            <div class="hero-btns">
-                <a href="https://drive.google.com/file/d/1MbGWinckJV2-F0vniQK4qxfzIIT9EHZg/view?usp=drivesdk" download
-                    class="btn-fill">Download Resume</a>
-                <a href="#contact" class="btn-outline">Get in Touch</a>
-            </div>
-            <div class="hero-socials">
-                <a href="https://github.com/ANJALI198114" target="_blank" title="GitHub">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/anjaliaggarwal1703" target="_blank" title="LinkedIn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
-                    </svg>
-                </a>
-                <a href="https://leetcode.com/ANJALI198114" target="_blank" title="LeetCode">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.23l-3.85 4.13a5.27 5.27 0 0 0-1.33 2.62 5.53 5.53 0 0 0 .06 2.36 5.83 5.83 0 0 0 1.62 2.84l4.28 4.19.04.04c2.25 2.16 5.85 2.13 8.06-.07l2.4-2.39a1.38 1.38 0 0 0-1.95-1.96l-2.4 2.39a3.02 3.02 0 0 1-4.2.04l-4.28-4.19a2.68 2.68 0 0 1 .69-4.39l4.27-4.57c1.06-1.13 3.2-1.27 4.43-.28l3.5 2.83a1.38 1.38 0 0 0 1.73-2.15l-3.5-2.83a4.17 4.17 0 0 0-2.77-1.2l2.01-2.16A1.38 1.38 0 0 0 13.48 0zm-2.87 12.82a1.38 1.38 0 0 0 0 2.76H20.79a1.38 1.38 0 0 0 0-2.76H10.61z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="hero-right">
-            <div class="photo-wrap">
-                <div class="spin-ring"></div>
-                <div class="photo-frame">
-                    <!-- To add your photo: replace below with <img src="photo.jpg" alt="Anjali"/> -->
-                    <div class="photo-ph">
-                        <img src="image.jpeg" alt="Anjali">
+            <div class="hero-main">
+                <div class="hero-left">
+                    <div class="hero-badge"><span class="dot"></span>Final-year B.Tech CSE (AI) · Class of 2027</div>
+                    <div class="hero-hello">Hello, I'm</div>
+                    <h1 class="hero-name"><span class="n1">Anjali</span><span class="n2">Aggarwal</span></h1>
+                    <div class="hero-type" aria-live="off"><span id="hero-type">AI Engineer</span><span
+                            class="caret">|</span></div>
+                    <p class="hero-desc">Hands-on with churn modelling, customer segmentation and SQL feature
+                        engineering, plus RAG and LLM pipelines. I build end-to-end analytics and AI automation —
+                        from raw data to a deployed dashboard.</p>
+                    <div class="hero-btns">
+                        <a href="Anjali_Aggarwal_Resume.pdf" download class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+                            </svg>Download Resume</a>
+                        <a href="#projects" class="btn btn-ghost">View Projects</a>
+                    </div>
+                    <div class="socials">
+                        <a href="https://github.com/ANJALI198114" target="_blank" rel="noopener" title="GitHub"
+                            aria-label="GitHub">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anjaliaggarwal1703/" target="_blank" rel="noopener"
+                            title="LinkedIn" aria-label="LinkedIn">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
+                            </svg>
+                        </a>
+                        <a href="https://leetcode.com/u/Anjali-Aggarwal/" target="_blank" rel="noopener"
+                            title="LeetCode" aria-label="LeetCode">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.23l-3.85 4.13a5.27 5.27 0 0 0-1.33 2.62 5.53 5.53 0 0 0 .06 2.36 5.83 5.83 0 0 0 1.62 2.84l4.28 4.19.04.04c2.25 2.16 5.85 2.13 8.06-.07l2.4-2.39a1.38 1.38 0 0 0-1.95-1.96l-2.4 2.39a3.02 3.02 0 0 1-4.2.04l-4.28-4.19a2.68 2.68 0 0 1 .69-4.39l4.27-4.57c1.06-1.13 3.2-1.27 4.43-.28l3.5 2.83a1.38 1.38 0 0 0 1.73-2.15l-3.5-2.83a4.17 4.17 0 0 0-2.77-1.2l2.01-2.16A1.38 1.38 0 0 0 13.48 0zm-2.87 12.82a1.38 1.38 0 0 0 0 2.76H20.79a1.38 1.38 0 0 0 0-2.76H10.61z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:anjaliaggarwal1703@gmail.com" title="Email" aria-label="Email">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,12 2,6" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="scroll-hint">
-            <div class="scroll-wheel"></div>SCROLL
-        </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-     ABOUT
-══════════════════════════════════════ -->
-    <section id="about">
-        <div class="about-wrap">
-            <div class="about-top">
-                <div class="about-mini-photo">
-                    <!-- To add photo: <img src="photo.jpg" alt="Anjali"/> -->
-                    <div class="mini-ph">👩‍💻</div>
-                </div>
-                <div class="about-name-block">
-                    <div class="aname">Anjali Aggarwal</div>
-                    <div class="arole">Aspiring Software Engineer &amp; Web Developer</div>
-                    <p class="abio">I build scalable, modern applications with a strong focus on clean architecture,
-                        delightful UX, and performance. My toolkit spans React, Next.js, TypeScript, Node.js, and
-                        MongoDB — bringing ideas to life from concept to production.</p>
-                    <div class="about-chips">
-                        <div class="chip"><strong>Experience</strong>Internships × 2</div>
-                        <div class="chip"><strong>Specialty</strong>Full Stack</div>
-                        <div class="chip"><strong>Focus</strong>Performance &amp; UX</div>
-                    </div>
-                    <div class="about-action-btns">
-                        <a href="#projects" class="btn-fill" style="font-size:.8rem;padding:.6rem 1.3rem;">View
-                            Projects</a>
-                        <a href="#contact" class="btn-outline" style="font-size:.8rem;padding:.6rem 1.3rem;">Get in
-                            Touch</a>
-                    </div>
+                <div class="photo-wrap">
+                    <div class="spin-ring"></div>
+                    <div class="photo-frame"><img src="image.jpeg" alt="Portrait of Anjali Aggarwal" /></div>
                 </div>
             </div>
 
-            <div class="about-body">
-                <div class="about-me-text">
+            <div class="stats">
+                <div class="stat"><div class="stat-n">0.81</div><div class="stat-l">ROC-AUC on churn model (XGBoost, 779K
+                        transactions)</div></div>
+                <div class="stat"><div class="stat-n">£745K</div><div class="stat-l">Revenue at risk flagged by churn ×
+                        value ranking</div></div>
+                <div class="stat"><div class="stat-n">60+</div><div class="stat-l">SKUs in AI catalog automation
+                        pipeline</div></div>
+                <div class="stat"><div class="stat-n">200+</div><div class="stat-l">LeetCode problems · 100+ day streak
+                    </div></div>
+            </div>
+        </section>
+
+        <!-- ═════════ ABOUT ═════════ -->
+        <section id="about" class="alt">
+            <div class="wrap">
+                <div class="sec-head reveal">
                     <div class="sec-tag">About Me</div>
-                    <p>I'm an <strong>Aspiring Software Engineer</strong> pursuing B.Tech in CSE (AI) at KIET Group of
-                        Institutions. Passionate about turning complex ideas into user-friendly web applications.</p>
-                    <p>Currently interning at <strong>Proeffico Solutions</strong> after completing my tenure at
-                        <strong>Frisson DevHub</strong>. I love building products that are fast, accessible, and
-                        beautiful.
-                    </p>
+                    <h2 class="sec-h">Data-driven, AI-focused, <br />shipping end to end.</h2>
                 </div>
-                <div class="edu-wrap">
-                    <div class="sec-tag">Education</div>
-                    <div class="edu-cards">
-                        <div class="edu-card">
-                            <div class="edu-deg">B.Tech — Computer Science &amp; Engineering (AI)</div>
-                            <div class="edu-sch">KIET Group of Institutions</div>
-                            <div class="edu-badges"><span class="edu-badge">Nov 2023 – Present</span><span
-                                    class="edu-badge hi">76%</span></div>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>I'm a <strong>final-year B.Tech student in Computer Science &amp; Engineering (Artificial
+                                Intelligence)</strong> at KIET Group of Institutions, with hands-on experience in
+                            <strong>churn modelling, customer segmentation and SQL feature engineering</strong>, plus
+                            <strong>RAG and LLM pipelines</strong>.</p>
+                        <p>My latest project, <strong>RetainIQ</strong>, is an end-to-end retention analytics build
+                            (XGBoost, SHAP, Streamlit). During internships I've built AI automation pipelines at
+                            <strong>Maple Furnishers</strong> and a data-backed Lead Management System at
+                            <strong>Proeffico Solutions</strong>.</p>
+                        <div class="about-chips">
+                            <div class="chip"><strong>Focus</strong>Data Science &amp; AI</div>
+                            <div class="chip"><strong>Experience</strong>2 internships</div>
+                            <div class="chip"><strong>Graduating</strong>2027</div>
                         </div>
-                        <div class="edu-card">
-                            <div class="edu-deg">Intermediate — CBSE Board</div>
-                            <div class="edu-sch">Chhaya Public School</div>
-                            <div class="edu-badges"><span class="edu-badge">Apr 2021 – Jul 2022</span><span
-                                    class="edu-badge hi">90%</span></div>
+                    </div>
+                    <div class="reveal">
+                        <div class="edu-title">Education</div>
+                        <div class="edu-cards">
+                            <div class="edu-card">
+                                <div class="edu-deg">B.Tech — Computer Science &amp; Engineering (AI)</div>
+                                <div class="edu-sch">KIET Group of Institutions (AKTU)</div>
+                                <div class="edu-badges"><span class="edu-badge">2023 – 2027</span><span
+                                        class="edu-badge hi">CGPA 7.52</span></div>
+                            </div>
+                            <div class="edu-card">
+                                <div class="edu-deg">Class XII — CBSE</div>
+                                <div class="edu-sch">CPS International School</div>
+                                <div class="edu-badges"><span class="edu-badge">2021 – 2022</span><span
+                                        class="edu-badge hi">89.6%</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Skills -->
-            <div class="skills-wrap">
-                <div class="skills-grid-label">My Skills — Modern Applications | Modern Technologies</div>
-                <div class="skills-icon-grid" id="skills-grid"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-     PROJECTS
-══════════════════════════════════════ -->
-    <section id="projects">
-        <div class="proj-wrap">
-            <div class="centered" style="margin-bottom:3rem;">
-                <div class="sec-tag" style="justify-content:center;">My Work</div>
-                <h2 class="sec-h">Featured Projects</h2>
-                <p class="sec-sub">Explore my latest work showcasing modern web technologies and creative solutions.</p>
-            </div>
-            <div class="proj-slider">
-                <!-- Slide 0 -->
-                <div class="proj-slide on" id="ps0">
-                    <div class="proj-canvas-wrap"><canvas id="pc0" width="560" height="350"></canvas></div>
-                    <div>
-                        <div class="proj-tag">Full-Stack Web App</div>
-                        <div class="proj-name">SOCIFY — Swipeverse</div>
-                        <div class="proj-desc">A responsive, unbiased dating web application with secure authentication,
-                            scalable Next.js architecture, and smooth UX. Deployed on Vercel.</div>
-                        <div class="proj-stack-lbl">Key Features</div>
-                        <ul class="proj-feat">
-                            <li>Next.js App Router with TypeScript</li>
-                            <li>Reusable component-based UI</li>
-                            <li>Secure authentication flow</li>
-                            <li>Deployed on Vercel</li>
-                        </ul>
-                        <div class="proj-stack-lbl">Tech Stack</div>
-                        <div class="proj-stack"><span>Next.js</span><span>TypeScript</span><span>App
-                                Router</span><span>Vercel</span></div>
-                        <div class="proj-btns">
-                            <a href="https://socify-xi.vercel.app/" class="btn-live">👁 Live Preview</a>
-                            <a href="https://github.com/anjaliaggarwal1703/socify" class="btn-gh">⌥ GitHub</a>
-                        </div>
-                    </div>
+        <!-- ═════════ SKILLS ═════════ -->
+        <section id="skills">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="sec-tag">Toolkit</div>
+                    <h2 class="sec-h">Technical Skills</h2>
+                    <p class="sec-sub">The languages, libraries and tools I use to take data from exploration to
+                        deployment.</p>
                 </div>
-                <!-- Slide 1 -->
-                <div class="proj-slide" id="ps1">
-                    <div class="proj-canvas-wrap"><canvas id="pc1" width="560" height="350"></canvas></div>
-                    <div>
-                        <div class="proj-tag">Frontend / Animation</div>
-                        <div class="proj-name">LAZAREV — Animated Website</div>
-                        <div class="proj-desc">Animation-driven website with scroll-based interactions, interactive UI
-                            effects, and modern UI/UX principles built with HTML, CSS and JavaScript.</div>
-                        <div class="proj-stack-lbl">Key Features</div>
-                        <ul class="proj-feat">
-                            <li>Scroll-based animations</li>
-                            <li>Interactive UI effects</li>
-                            <li>Modern UI/UX principles</li>
-                            <li>Fully responsive</li>
-                        </ul>
-                        <div class="proj-stack-lbl">Tech Stack</div>
-                        <div class="proj-stack">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GSAP</span>
-                        </div>
-                        <div class="proj-btns">
-                            <a href="https://anjali198114.github.io/Lazarev/" class="btn-live">👁 Live Preview</a>
-                            <a href="https://github.com/anjali198114/Lazarev" class="btn-gh">⌥ GitHub</a>
-                        </div>
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <h3>Languages</h3>
+                        <div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>XGBoost</span><span>Matplotlib</span><span>SQL</span><span>Java</span></div>
                     </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="proj-slide" id="ps2">
-                    <div class="proj-canvas-wrap"><canvas id="pc2" width="560" height="350"></canvas></div>
-                    <div>
-                        <div class="proj-tag">Full-Stack / Real-Time</div>
-                        <div class="proj-name">Realtime Location Tracker</div>
-                        <div class="proj-desc">End-to-end GPS tracking with live map visualization, movement history,
-                            and WebSocket communication for minimal-latency multi-user updates.</div>
-                        <div class="proj-stack-lbl">Key Features</div>
-                        <ul class="proj-feat">
-                            <li>Real-time GPS via Socket.io</li>
-                            <li>Leaflet.js + Google Maps API</li>
-                            <li>Multi-user backend</li>
-                            <li>Route tracking & history</li>
-                        </ul>
-                        <div class="proj-stack-lbl">Tech Stack</div>
-                        <div class="proj-stack">
-                            <span>Node.js</span><span>Express</span><span>Socket.io</span><span>Leaflet.js</span>
-                        </div>
-                        <div class="proj-btns">
-                            <a href="https://realtime-location-tracking-9jkc.onrender.com/" class="btn-live">👁 Live Preview</a>
-                            <a href="https://github.com/anjali198114/Realtime-Location-Tracker" class="btn-gh">⌥ GitHub</a>
-                        </div>
+                    <div class="skill-card reveal">
+                        <h3>Machine Learning</h3>
+                        <div class="tags"><span>Classification</span><span>Regression</span><span>Clustering (K-Means)</span><span>Feature Engineering</span><span>EDA</span><span>Cross-Validation</span><span>ROC-AUC · RMSE · MAE</span><span>SHAP</span></div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>AI / LLM</h3>
+                        <div class="tags"><span>RAG Pipelines</span><span>Vector Embeddings</span><span>Prompt Engineering</span><span>Gemini API</span></div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Tools</h3>
+                        <div class="tags"><span>Streamlit</span><span>Microsoft PowerBI</span><span>Git / GitHub</span><span>Jupyter</span><span>VS Code</span></div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Web Development</h3>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>MongoDB</span><span>JWT Auth</span><span>Zod</span></div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Core Concepts</h3>
+                        <div class="tags"><span>DBMS</span><span>OS</span><span>OOPS</span><span>DSA</span></div>
                     </div>
                 </div>
             </div>
-            <div class="proj-controls">
-                <button class="proj-arrow" id="pp">←</button>
-                <div class="proj-dots" id="pdots"></div>
-                <div class="proj-count" id="pcount"><strong>01</strong> / 03</div>
-                <button class="proj-arrow" id="pn">→</button>
+        </section>
+
+        <!-- ═════════ PROJECTS ═════════ -->
+        <section id="projects" class="alt">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="sec-tag">My Work</div>
+                    <h2 class="sec-h">Featured Projects</h2>
+                    <p class="sec-sub">Analytics, retrieval and full-stack AI — built end to end and measured.</p>
+                </div>
+
+                <div class="projects">
+                    <!-- RetainIQ -->
+                    <article class="project reveal">
+                        <div class="proj-visual">
+                            <svg viewBox="0 0 640 400" role="img"
+                                aria-label="RetainIQ dashboard preview with ROC-AUC 0.81, £745K revenue at risk and 16% of customers driving 67% of revenue">
+                                <defs>
+                                    <linearGradient id="rg" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#ff2d78" />
+                                        <stop offset="1" stop-color="#e040fb" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="640" height="400" fill="#0b0610" />
+                                <rect x="0" y="0" width="640" height="38" fill="#140c1c" />
+                                <circle cx="20" cy="19" r="5" fill="#ff5f57" /><circle cx="38" cy="19" r="5" fill="#febc2e" /><circle cx="56" cy="19" r="5" fill="#28c840" />
+                                <text x="320" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#8d7b99">RetainIQ · Customer Retention Dashboard</text>
+
+                                <g font-family="Inter,sans-serif">
+                                    <rect x="24" y="58" width="190" height="82" rx="12" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <text x="40" y="82" font-size="11" fill="#8d7b99">CHURN MODEL ROC-AUC</text>
+                                    <text x="40" y="123" font-size="36" font-weight="800" fill="url(#rg)">0.81</text>
+
+                                    <rect x="225" y="58" width="190" height="82" rx="12" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <text x="241" y="82" font-size="11" fill="#8d7b99">REVENUE AT RISK</text>
+                                    <text x="241" y="123" font-size="36" font-weight="800" fill="url(#rg)">£745K</text>
+
+                                    <rect x="426" y="58" width="190" height="82" rx="12" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <text x="442" y="82" font-size="11" fill="#8d7b99">TOP CUSTOMERS → REVENUE</text>
+                                    <text x="442" y="123" font-size="28" font-weight="800" fill="url(#rg)">16% → 67%</text>
+                                </g>
+
+                                <!-- SHAP-style bars -->
+                                <rect x="24" y="158" width="300" height="222" rx="12" fill="#140c1c" stroke="rgba(255,45,120,.2)" />
+                                <text x="40" y="182" font-family="Inter,sans-serif" font-size="11" fill="#8d7b99">SHAP · WHAT DRIVES CHURN</text>
+                                <g font-family="Inter,sans-serif" font-size="11" fill="#f8f0ff">
+                                    <text x="40" y="224">Recency</text>
+                                    <rect x="108" y="212" width="196" height="16" rx="4" fill="url(#rg)" />
+                                    <text x="40" y="266">Frequency</text>
+                                    <rect x="108" y="254" width="120" height="16" rx="4" fill="#9b30d0" opacity=".85" />
+                                    <text x="40" y="308">Monetary</text>
+                                    <rect x="108" y="296" width="82" height="16" rx="4" fill="#9b30d0" opacity=".6" />
+                                    <text x="40" y="350" fill="#8d7b99">Recency is the main driver</text>
+                                </g>
+
+                                <!-- ROC curve -->
+                                <rect x="336" y="158" width="280" height="222" rx="12" fill="#140c1c" stroke="rgba(255,45,120,.2)" />
+                                <text x="352" y="182" font-family="Inter,sans-serif" font-size="11" fill="#8d7b99">ROC CURVE · HOLD-OUT</text>
+                                <line x1="366" y1="354" x2="590" y2="204" stroke="#5a4a66" stroke-dasharray="4 4" />
+                                <path d="M366 354 C 372 290, 396 240, 440 222 S 540 206, 590 204" fill="none" stroke="url(#rg)" stroke-width="3" stroke-linecap="round" />
+                                <line x1="366" y1="354" x2="590" y2="354" stroke="#3a2a46" />
+                                <line x1="366" y1="354" x2="366" y2="204" stroke="#3a2a46" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="proj-meta"><span class="proj-tag">Data Science · Featured</span><span class="proj-date">Oct 2026</span></div>
+                            <h3 class="proj-name">RetainIQ: Customer Retention Analytics</h3>
+                            <ul class="proj-feat">
+                                <li>Built a <b>leakage-safe churn model</b> on 779K retail transactions (5.3K customers) using SQL features and a 90-day time-based label — XGBoost reached <b>0.81 ROC-AUC</b>, with SHAP showing recency as the main driver.</li>
+                                <li>Segmented customers with RFM and K-Means; found that <b>16% of customers bring 67% of revenue</b>.</li>
+                                <li>Ranked customers by churn probability × expected value to flag <b>£745K revenue at risk</b>; a simulation (assumed 20% offer effect) showed targeting the top 500 saves ~4x more than random outreach.</li>
+                                <li>Deployed an interactive Streamlit dashboard with filters, a downloadable call list, and a campaign simulator.</li>
+                            </ul>
+                            <div class="tags"><span>Python</span><span>SQL</span><span>XGBoost</span><span>SHAP</span><span>Streamlit</span></div>
+                            <div class="proj-btns">
+                                <a href="https://retainiq-churn-dashboard.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo ↗</a>
+                                <a href="https://github.com/ANJALI198114/retainiq" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- RAG -->
+                    <article class="project reveal">
+                        <div class="proj-visual">
+                            <svg viewBox="0 0 640 400" role="img" aria-label="RAG pipeline: lecture video to Whisper transcription, chunking and bge-m3 embeddings, Joblib vector store, cosine similarity retrieval, grounded LLM answer">
+                                <defs>
+                                    <linearGradient id="rg2" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#ff2d78" />
+                                        <stop offset="1" stop-color="#e040fb" />
+                                    </linearGradient>
+                                    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff6eb4" /></marker>
+                                </defs>
+                                <rect width="640" height="400" fill="#0b0610" />
+                                <g font-family="Inter,sans-serif" text-anchor="middle">
+                                    <text x="320" y="40" font-size="12" fill="#8d7b99" letter-spacing="2">INDEXING (ONE-TIME)</text>
+                                    <g fill="#140c1c" stroke="rgba(255,45,120,.35)">
+                                        <rect x="24" y="62" width="130" height="64" rx="12" />
+                                        <rect x="176" y="62" width="130" height="64" rx="12" />
+                                        <rect x="328" y="62" width="150" height="64" rx="12" />
+                                        <rect x="500" y="62" width="116" height="64" rx="12" />
+                                    </g>
+                                    <g fill="#f8f0ff" font-size="13" font-weight="700">
+                                        <text x="89" y="90">Lecture videos</text>
+                                        <text x="241" y="90">Whisper</text>
+                                        <text x="403" y="90">Chunk + embed</text>
+                                        <text x="558" y="90">Joblib store</text>
+                                    </g>
+                                    <g fill="#8d7b99" font-size="11">
+                                        <text x="89" y="110">raw audio / video</text>
+                                        <text x="241" y="110">transcription</text>
+                                        <text x="403" y="110">bge-m3 · batch of 10</text>
+                                        <text x="558" y="110">persistent vectors</text>
+                                    </g>
+                                    <g stroke="#ff6eb4" stroke-width="1.6" marker-end="url(#ar)">
+                                        <line x1="154" y1="94" x2="174" y2="94" />
+                                        <line x1="306" y1="94" x2="326" y2="94" />
+                                        <line x1="478" y1="94" x2="498" y2="94" />
+                                    </g>
+
+                                    <text x="320" y="190" font-size="12" fill="#8d7b99" letter-spacing="2">QUERY TIME</text>
+                                    <g fill="#140c1c" stroke="rgba(255,45,120,.35)">
+                                        <rect x="24" y="212" width="130" height="64" rx="12" />
+                                        <rect x="176" y="212" width="130" height="64" rx="12" />
+                                        <rect x="328" y="212" width="150" height="64" rx="12" />
+                                        <rect x="500" y="212" width="116" height="64" rx="12" />
+                                    </g>
+                                    <g fill="#f8f0ff" font-size="13" font-weight="700">
+                                        <text x="89" y="240">Student question</text>
+                                        <text x="241" y="240">Embed query</text>
+                                        <text x="403" y="240">Cosine search</text>
+                                        <text x="558" y="240">LLM answer</text>
+                                    </g>
+                                    <g fill="#8d7b99" font-size="11">
+                                        <text x="89" y="260">natural language</text>
+                                        <text x="241" y="260">same bge-m3 model</text>
+                                        <text x="403" y="260">top-k relevant chunks</text>
+                                        <text x="558" y="260">grounded prompt</text>
+                                    </g>
+                                    <g stroke="#ff6eb4" stroke-width="1.6" marker-end="url(#ar)">
+                                        <line x1="154" y1="244" x2="174" y2="244" />
+                                        <line x1="306" y1="244" x2="326" y2="244" />
+                                        <line x1="478" y1="244" x2="498" y2="244" />
+                                    </g>
+                                    <path d="M558 126 L558 150 L403 150 L403 208" fill="none" stroke="#9b30d0" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ar)" />
+                                    <text x="480" y="144" font-size="10" fill="#9b30d0">vectors reload instantly</text>
+
+                                    <rect x="150" y="318" width="340" height="40" rx="20" fill="rgba(255,45,120,.08)" stroke="rgba(255,45,120,.35)" />
+                                    <text x="320" y="343" font-size="13" fill="#ff6eb4" font-weight="600">3,000+ chunks processed reliably</text>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="proj-meta"><span class="proj-tag">RAG · LLM</span><span class="proj-date">Jul 2026</span></div>
+                            <h3 class="proj-name">RAG-Based AI Teaching Assistant</h3>
+                            <ul class="proj-feat">
+                                <li>Built an end-to-end <b>RAG pipeline</b> transcribing lecture videos (Whisper), chunking and embedding content (Ollama bge-m3), and retrieving relevant context via cosine similarity search.</li>
+                                <li>Engineered a <b>batched embedding pipeline</b> (batch size 10) to reliably process 3,000+ text chunks, resolving API-level failures during bulk processing.</li>
+                                <li>Implemented <b>persistent vector storage</b> using Joblib for fast reload without reprocessing, and designed dynamic prompt construction for grounded LLM responses.</li>
+                            </ul>
+                            <div class="tags"><span>Python</span><span>Whisper</span><span>Ollama (bge-m3)</span><span>Joblib</span></div>
+                            <div class="proj-btns">
+                                <a href="https://github.com/ANJALI198114/RAG-AI-Teaching-Assistant" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Career Copilot -->
+                    <article class="project reveal">
+                        <div class="proj-visual">
+                            <svg viewBox="0 0 640 400" role="img" aria-label="Career Copilot preview: resume upload, match score and generated interview plan">
+                                <defs>
+                                    <linearGradient id="rg3" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#ff2d78" />
+                                        <stop offset="1" stop-color="#e040fb" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="640" height="400" fill="#0b0610" />
+                                <rect width="640" height="38" fill="#140c1c" />
+                                <circle cx="20" cy="19" r="5" fill="#ff5f57" /><circle cx="38" cy="19" r="5" fill="#febc2e" /><circle cx="56" cy="19" r="5" fill="#28c840" />
+                                <text x="320" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#8d7b99">Career Copilot · Interview Prep</text>
+                                <g font-family="Inter,sans-serif">
+                                    <!-- upload -->
+                                    <rect x="24" y="58" width="180" height="250" rx="14" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <rect x="44" y="84" width="140" height="110" rx="10" fill="none" stroke="#9b30d0" stroke-dasharray="6 5" />
+                                    <path d="M114 160 L114 118 M98 134 L114 118 L130 134" stroke="url(#rg3)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                    <text x="114" y="182" text-anchor="middle" font-size="11" fill="#8d7b99">Upload PDF / DOCX</text>
+                                    <rect x="44" y="214" width="140" height="10" rx="5" fill="#2a1d36" /><rect x="44" y="234" width="110" height="10" rx="5" fill="#2a1d36" /><rect x="44" y="254" width="125" height="10" rx="5" fill="#2a1d36" />
+                                    <text x="114" y="292" text-anchor="middle" font-size="10" fill="#8d7b99">Resume parsed to JSON</text>
+
+                                    <!-- score -->
+                                    <rect x="218" y="58" width="190" height="250" rx="14" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <text x="313" y="86" text-anchor="middle" font-size="11" fill="#8d7b99">MATCH SCORE</text>
+                                    <circle cx="313" cy="170" r="52" fill="none" stroke="#2a1d36" stroke-width="12" />
+                                    <circle cx="313" cy="170" r="52" fill="none" stroke="url(#rg3)" stroke-width="12" stroke-linecap="round" stroke-dasharray="230 327" transform="rotate(-90 313 170)" />
+                                    <text x="313" y="176" text-anchor="middle" font-size="16" font-weight="800" fill="#f8f0ff">Match</text>
+                                    <text x="313" y="262" text-anchor="middle" font-size="11" fill="#8d7b99">Resume vs. job description</text>
+                                    <text x="313" y="282" text-anchor="middle" font-size="11" fill="#ff6eb4">Gemini-powered</text>
+
+                                    <!-- plan -->
+                                    <rect x="422" y="58" width="194" height="250" rx="14" fill="#140c1c" stroke="rgba(255,45,120,.25)" />
+                                    <text x="440" y="86" font-size="11" fill="#8d7b99">INTERVIEW PLAN</text>
+                                    <g fill="#ff6eb4" font-size="13"><text x="440" y="118">✓</text><text x="440" y="158">✓</text><text x="440" y="198">✓</text><text x="440" y="238">✓</text></g>
+                                    <g fill="#2a1d36"><rect x="462" y="106" width="136" height="10" rx="5" /><rect x="462" y="122" width="96" height="8" rx="4" opacity=".6" /><rect x="462" y="146" width="126" height="10" rx="5" /><rect x="462" y="162" width="86" height="8" rx="4" opacity=".6" /><rect x="462" y="186" width="132" height="10" rx="5" /><rect x="462" y="202" width="100" height="8" rx="4" opacity=".6" /><rect x="462" y="226" width="118" height="10" rx="5" /><rect x="462" y="242" width="90" height="8" rx="4" opacity=".6" /></g>
+                                    <text x="519" y="288" text-anchor="middle" font-size="10" fill="#8d7b99">Saved to report history</text>
+
+                                    <g font-size="11" font-weight="600" fill="#f8f0ff" text-anchor="middle">
+                                        <rect x="24" y="328" width="110" height="40" rx="20" fill="rgba(255,45,120,.08)" stroke="rgba(255,45,120,.35)" /><text x="79" y="353">JWT Auth</text>
+                                        <rect x="150" y="328" width="110" height="40" rx="20" fill="rgba(255,45,120,.08)" stroke="rgba(255,45,120,.35)" /><text x="205" y="353">Zod</text>
+                                        <rect x="276" y="328" width="130" height="40" rx="20" fill="rgba(255,45,120,.08)" stroke="rgba(255,45,120,.35)" /><text x="341" y="353">MongoDB</text>
+                                        <rect x="422" y="328" width="194" height="40" rx="20" fill="rgba(255,45,120,.08)" stroke="rgba(255,45,120,.35)" /><text x="519" y="353">AI Resume Generator</text>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="proj-meta"><span class="proj-tag">Full-Stack · AI</span><span class="proj-date">May 2026</span></div>
+                            <h3 class="proj-name">Career Copilot: AI-Powered Interview Prep Platform</h3>
+                            <ul class="proj-feat">
+                                <li>Built a <b>MERN stack app</b> using the Google Gemini API to generate personalized interview plans and match scores from uploaded resumes.</li>
+                                <li>Designed a Python pipeline to process PDF/DOCX resumes, achieving <b>95%+ JSON accuracy</b> through structured prompt engineering.</li>
+                                <li>Implemented JWT auth, Zod validation, and an AI resume generator, <b>reducing interview prep time by ~70%</b>, with full MongoDB report history.</li>
+                            </ul>
+                            <div class="tags"><span>MERN</span><span>Google Gemini API</span><span>Python</span></div>
+                            <div class="proj-btns">
+                                <a href="https://github.com/ANJALI198114/CareerCopilot-AI" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ══════════════════════════════════════
-     EXPERIENCE
-══════════════════════════════════════ -->
-    <section id="experience">
-        <div class="exp-wrap">
-            <h2 class="exp-h">Experience</h2>
-
-            <div class="tl-outer" id="tl-outer">
-                <!-- CARD ABOVE (internship 1) -->
-                <div class="tl-above-row">
-                    <div>
-                        <div class="tl-card above-card" id="tlc1">
-                            <div class="tl-role">Software Engineer Intern</div>
-                            <div class="tl-co">Frisson DevHub</div>
-                            <div class="tl-period">Mar 2025 – Jun 2025</div>
+        <!-- ═════════ EXPERIENCE ═════════ -->
+        <section id="experience">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="sec-tag">Career</div>
+                    <h2 class="sec-h">Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="tl-item reveal">
+                        <div class="tl-card">
+                            <div class="tl-top">
+                                <div>
+                                    <div class="tl-role">AI Engineer Intern</div>
+                                    <div class="tl-co">Maple Furnishers · Delhi</div>
+                                </div>
+                                <div class="tl-period">Jul 2026 – Oct 2026</div>
+                            </div>
                             <ul class="tl-ul">
-                                <li>Built responsive frontend components using HTML, CSS, JS &amp; React.js — 95%
-                                    cross-device compatibility.</li>
-                                <li>Improved UI performance by 30% via reusable React components.</li>
-                                <li>Collaborated with 5+ designers &amp; backend devs to deliver scalable UI.</li>
-                                <li>Applied UI/UX best practices and component-based architecture.</li>
+                                <li>Architected an AI-driven product catalog automation pipeline integrating generative image staging, structured data processing, and Shopify API sync across 60+ SKUs.</li>
+                                <li>Designed a standardized SKU taxonomy and material classification system to structure catalog data for automated AI processing pipelines.</li>
                             </ul>
                         </div>
-                        <div class="tl-conn-above"></div>
                     </div>
-                    <div class="tl-empty"></div>
-                </div>
-
-                <!-- THE LINE -->
-                <div class="tl-line-bg">
-                    <div class="tl-line-fill" id="tlf"></div>
-                </div>
-
-                <!-- DOTS ON LINE -->
-                <div class="tl-dots-row">
-                    <div class="tl-dot-pin" id="tld1" style="left:25%"></div>
-                    <div class="tl-dot-pin" id="tld2" style="left:75%"></div>
-                </div>
-
-                <!-- CARD BELOW (internship 2) -->
-                <div class="tl-below-row">
-                    <div class="tl-empty"></div>
-                    <div>
-                        <div class="tl-conn-below"></div>
-                        <div class="tl-card" id="tlc2">
-                            <div class="tl-role">Associate Software Engineer Intern</div>
-                            <div class="tl-co">Proeffico Solutions</div>
-                            <div class="tl-period">Mar 2026 – Present</div>
+                    <div class="tl-item reveal">
+                        <div class="tl-card">
+                            <div class="tl-top">
+                                <div>
+                                    <div class="tl-role">Associate Software Engineer Intern</div>
+                                    <div class="tl-co">Proeffico Solutions · Noida</div>
+                                </div>
+                                <div class="tl-period">Mar 2026 – May 2026</div>
+                            </div>
                             <ul class="tl-ul">
-                                <li>Assisting in development of web applications using modern technologies.</li>
-                                <li>Working on both frontend &amp; backend — UI components and API integration.</li>
-                                <li>Collaborating with team members on requirements and functionality.</li>
-                                <li>Applying professional dev practices, version control &amp; debugging.</li>
+                                <li>Built a Lead Management System handling structured data for 1000+ records, with dynamic dashboards for data visualization and CRUD operations.</li>
+                                <li>Designed backend logic for data validation and query handling, ensuring accurate storage and retrieval of customer lead records.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ══════════════════════════════════════
-     CERTIFICATIONS
-══════════════════════════════════════ -->
-    <section id="certifications">
-        <div class="certs-wrap">
-            <div class="centered" style="margin-bottom:3rem;">
-                <div class="sec-tag" style="justify-content:center;">Credentials &amp; Achievements</div>
-                <h2 class="sec-h">Premium Certificates</h2>
-                <p class="sec-sub">Hover each certificate to reveal — earned through dedication and continuous learning.
-                </p>
-            </div>
-            <div class="certs-grid">
-                <div class="cert-card">
-                    <div class="cert-env">
-                        <div class="cert-bg" style="background:linear-gradient(160deg,#1a0d2e,#4a1560);"></div>
-                        <div class="cert-flap" style="background:#130924;"></div>
-                        <div href="" class="cert-paper">
-                            <div class="cert-wax">☁️</div>
-                            <div class="cert-p1">Certificate</div>
-                            <div class="cert-p2">of Achievement</div>
-                            <div class="cert-pline"></div>
-                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
-                        </div>
-                        <div class="cert-bottom" style="background:linear-gradient(135deg,#1a0d2e,#6b21a8);">
-                            <div class="cert-bname">AWS Certified AI Practitioner</div>
-                            <div class="cert-bmeta"><span>☁️ Amazon Web Services</span><span>📅 Mar 2026</span></div>
+        <!-- ═════════ CREDENTIALS ═════════ -->
+        <section id="credentials" class="alt">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="sec-tag">Credentials</div>
+                    <h2 class="sec-h">Certifications &amp; Achievements</h2>
+                </div>
+                <div class="cred-grid">
+                    <div class="cred-col reveal">
+                        <h3>Certifications</h3>
+                        <div class="cert-list">
+                            <div class="cert-item">
+                                <div class="ci-icon">☁️</div>
+                                <div>
+                                    <div class="ci-title">AWS Certified AI Practitioner</div>
+                                    <div class="ci-sub">Amazon Web Services · Mar 2026</div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="ci-icon">🏅</div>
+                                <div>
+                                    <div class="ci-title">AWS Certified Cloud Practitioner</div>
+                                    <div class="ci-sub">Amazon Web Services · Jan 2026</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-env">
-                        <div class="cert-bg" style="background:linear-gradient(160deg,#2d0a1f,#6b1050);"></div>
-                        <div class="cert-flap" style="background:#230818;"></div>
-                        <div class="cert-paper">
-                            <div class="cert-wax">🏅</div>
-                            <div class="cert-p1">Certificate</div>
-                            <div class="cert-p2">of Achievement</div>
-                            <div class="cert-pline"></div>
-                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
-                        </div>
-                        <div class="cert-bottom" style="background:linear-gradient(135deg,#2d0a1f,#be185d);">
-                            <div class="cert-bname">AWS Certified Cloud Practitioner</div>
-                            <div class="cert-bmeta"><span>☁️ Amazon Web Services</span><span>📅 Jan 2026</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-env">
-                        <div class="cert-bg" style="background:linear-gradient(160deg,#1a0820,#3d1060);"></div>
-                        <div class="cert-flap" style="background:#110618;"></div>
-                        <div class="cert-paper">
-                            <div class="cert-wax">🔐</div>
-                            <div class="cert-p1">Certificate</div>
-                            <div class="cert-p2">of Achievement</div>
-                            <div class="cert-pline"></div>
-                            <div class="cert-pname">Presented to<strong>Anjali Aggarwal</strong></div>
-                        </div>
-                        <div class="cert-bottom" style="background:linear-gradient(135deg,#1a0820,#7c3aed);">
-                            <div class="cert-bname">Palo Alto Networks — Cybersecurity Foundation</div>
-                            <div class="cert-bmeta"><span>🛡️ Palo Alto Networks</span><span>📅 Jun 2025</span></div>
+                    <div class="cred-col reveal">
+                        <h3>Achievements</h3>
+                        <div class="ach-list">
+                            <div class="ach-item">
+                                <div class="ci-icon">🚀</div>
+                                <div>
+                                    <div class="ci-title">Smart India Hackathon 2025</div>
+                                    <div class="ci-sub">Selected at the Institute Level</div>
+                                </div>
+                            </div>
+                            <div class="ach-item">
+                                <div class="ci-icon">💻</div>
+                                <div>
+                                    <div class="ci-title">200+ LeetCode problems</div>
+                                    <div class="ci-sub">100+ day continuous solving streak</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ══════════════════════════════════════
-     CONTACT
-══════════════════════════════════════ -->
-    <section id="contact">
-        <div class="contact-wrap">
-            <div class="contact-left">
-                <h2 class="ctitle">Let's Work <span>Together</span></h2>
-                <p class="csub">Open to full-time roles, internships, and freelance projects.</p>
-                <p class="csub">Reach me at: <a href="mailto:anjaliaggarwal1703@gmail.com"
-                        class="cemail">anjaliaggarwal1703@gmail.com</a></p>
-                <div class="contact-icons">
-                    <a class="c-icon" href="https://github.com/ANJALI198114" target="_blank">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                    </a>
-                    <a class="c-icon" href="https://linkedin.com/in/anjali-aggarwal" target="_blank">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
-                        </svg>
-                    </a>
-                    <a class="c-icon" href="mailto:anjaliaggarwal1703@gmail.com">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,12 2,6" />
-                        </svg>
-                    </a>
+        <!-- ═════════ CONTACT ═════════ -->
+        <section id="contact">
+            <div class="wrap contact-wrap">
+                <div class="contact-left reveal">
+                    <h2 class="ctitle">Let's Work <span>Together</span></h2>
+                    <p class="csub">Open to data science, AI engineering and software roles, internships and
+                        collaborations.</p>
+                    <p class="csub">Reach me at <a href="mailto:anjaliaggarwal1703@gmail.com"
+                            class="cemail">anjaliaggarwal1703@gmail.com</a></p>
+                    <div class="socials">
+                        <a href="https://github.com/ANJALI198114" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anjaliaggarwal1703/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
+                            </svg>
+                        </a>
+                        <a href="https://leetcode.com/u/Anjali-Aggarwal/" target="_blank" rel="noopener"
+                            aria-label="LeetCode">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.23l-3.85 4.13a5.27 5.27 0 0 0-1.33 2.62 5.53 5.53 0 0 0 .06 2.36 5.83 5.83 0 0 0 1.62 2.84l4.28 4.19.04.04c2.25 2.16 5.85 2.13 8.06-.07l2.4-2.39a1.38 1.38 0 0 0-1.95-1.96l-2.4 2.39a3.02 3.02 0 0 1-4.2.04l-4.28-4.19a2.68 2.68 0 0 1 .69-4.39l4.27-4.57c1.06-1.13 3.2-1.27 4.43-.28l3.5 2.83a1.38 1.38 0 0 0 1.73-2.15l-3.5-2.83a4.17 4.17 0 0 0-2.77-1.2l2.01-2.16A1.38 1.38 0 0 0 13.48 0zm-2.87 12.82a1.38 1.38 0 0 0 0 2.76H20.79a1.38 1.38 0 0 0 0-2.76H10.61z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="laptop-visual">
-                    <svg width="260" height="185" viewBox="0 0 260 185">
-                        <rect x="30" y="15" width="200" height="128" rx="10" fill="#1a0d28"
-                            stroke="rgba(255,45,120,0.25)" stroke-width="1.5" />
-                        <rect x="40" y="24" width="180" height="110" rx="6" fill="#0e0614" />
-                        <rect x="52" y="36" width="75" height="3.5" rx="2" fill="rgba(255,45,120,0.6)" />
-                        <rect x="52" y="46" width="115" height="3.5" rx="2" fill="rgba(155,48,208,0.5)" />
-                        <rect x="62" y="56" width="85" height="3.5" rx="2" fill="rgba(224,64,251,0.4)" />
-                        <rect x="62" y="66" width="55" height="3.5" rx="2" fill="rgba(255,45,120,0.35)" />
-                        <rect x="52" y="76" width="95" height="3.5" rx="2" fill="rgba(155,48,208,0.45)" />
-                        <rect x="62" y="86" width="75" height="3.5" rx="2" fill="rgba(224,64,251,0.35)" />
-                        <rect x="52" y="96" width="105" height="3.5" rx="2" fill="rgba(255,45,120,0.5)" />
-                        <rect x="62" y="106" width="45" height="3.5" rx="2" fill="rgba(155,48,208,0.3)" />
-                        <rect x="52" y="116" width="8" height="3.5" rx="1.5" fill="rgba(255,45,120,0.8)">
-                            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite" />
-                        </rect>
-                        <rect x="10" y="143" width="240" height="10" rx="3" fill="#1a0d28"
-                            stroke="rgba(255,45,120,0.18)" stroke-width="1" />
-                        <rect x="95" y="143" width="70" height="4" rx="2" fill="#0e0614" />
-                        <circle cx="130" cy="20" r="2.5" fill="rgba(255,45,120,0.5)" />
-                    </svg>
-                </div>
-            </div>
-            <div>
-                <div class="cform">
+                <form class="cform reveal" id="contact-form">
                     <div class="crow">
-                        <input class="cfield" type="text" placeholder="Your Name" />
-                        <input class="cfield" type="email" placeholder="Your Email" />
+                        <input class="cfield" type="text" name="name" placeholder="Your Name" aria-label="Your name" required />
+                        <input class="cfield" type="email" name="email" placeholder="Your Email" aria-label="Your email" required />
                     </div>
-                    <select class="cfield">
-                        <option value="" style="background:#0e0614">Something in mind?</option>
+                    <select class="cfield" name="topic" aria-label="Topic">
+                        <option value="General enquiry" style="background:#0e0614">Something in mind?</option>
                         <option style="background:#0e0614">Full-time Role</option>
                         <option style="background:#0e0614">Internship</option>
-                        <option style="background:#0e0614">Freelance Project</option>
                         <option style="background:#0e0614">Collaboration</option>
                     </select>
-                    <textarea class="cfield" placeholder="Explain your idea..."></textarea>
-                    <button class="btn-send">Send Message ✦</button>
-                </div>
+                    <textarea class="cfield" name="message" placeholder="Tell me about your idea or role..." aria-label="Message" required></textarea>
+                    <button class="btn btn-send" type="submit">Send Message ✦</button>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
     <footer>
         <div class="foot-name">Anjali Aggarwal</div>
-        <div class="foot-socials">
-            <a href="https://github.com/ANJALI198114" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/anjali-aggarwal" target="_blank">LinkedIn</a>
-            <a href="https://leetcode.com/ANJALI198114" target="_blank">LeetCode</a>
+        <div class="foot-links">
+            <a href="https://github.com/ANJALI198114" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/anjaliaggarwal1703/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://leetcode.com/u/Anjali-Aggarwal/" target="_blank" rel="noopener">LeetCode</a>
+            <a href="Anjali_Aggarwal_Resume.pdf" download>Resume</a>
             <a href="mailto:anjaliaggarwal1703@gmail.com">Email</a>
         </div>
-        <div class="foot-quote">"Success is when preparation meets opportunity."</div>
         <div class="foot-copy">© 2026 Anjali Aggarwal. All rights reserved.</div>
     </footer>
 
+    <button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+
     <script>
-        /* ════════════════════
-           STARS (dim, small)
-        ════════════════════ */
-        const SC = document.getElementById('star-canvas');
-        const sx = SC.getContext('2d');
-        function rsz() { SC.width = window.innerWidth; SC.height = window.innerHeight; }
-        rsz(); window.addEventListener('resize', rsz);
-        const ST = Array.from({ length: 140 }, () => ({
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            r: Math.random() * 0.9 + 0.2,
-            o: Math.random() * 0.3 + 0.05,
-            s: (Math.random() * 0.08 + 0.02) * (Math.random() < 0.5 ? 1 : -1)
-        }));
-        (function drawSt() {
-            sx.clearRect(0, 0, SC.width, SC.height);
-            ST.forEach(s => {
-                s.o += s.s;
-                if (s.o > 0.38 || s.o < 0.04) s.s *= -1;
-                sx.beginPath(); sx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-                sx.fillStyle = `rgba(255,200,230,${s.o})`; sx.fill();
-            });
-            requestAnimationFrame(drawSt);
-        })();
-
-        /* ════════════════════
-           CURSOR
-        ════════════════════ */
-        const curEl = document.getElementById('cur');
-        const ringEl = document.getElementById('cur-ring');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX; my = e.clientY;
-            curEl.style.left = mx + 'px'; curEl.style.top = my + 'px';
-        });
-        (function animCur() {
-            rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
-            ringEl.style.left = rx + 'px'; ringEl.style.top = ry + 'px';
-            requestAnimationFrame(animCur);
-        })();
-        document.querySelectorAll('a,button,.cert-card,.skill-item,.proj-arrow').forEach(el => {
-            el.addEventListener('mouseenter', () => { curEl.style.transform = 'translate(-50%,-50%) scale(2.2)'; ringEl.style.transform = 'translate(-50%,-50%) scale(1.6)'; });
-            el.addEventListener('mouseleave', () => { curEl.style.transform = 'translate(-50%,-50%) scale(1)'; ringEl.style.transform = 'translate(-50%,-50%) scale(1)'; });
-        });
-
-        /* ════════════════════
-           PRELOADER
-        ════════════════════ */
-        const words = ['Hello', 'Hola', 'Bonjour', 'नमस्ते', 'Ciao', 'Olá', '你好', 'مرحبا', 'Hallo'];
-        const preW = document.getElementById('pre-word');
-        const preB = document.getElementById('pre-bar');
-        const preEl = document.getElementById('preloader');
-        let wi = 0;
-        function showNext() {
-            if (wi >= words.length) {
-                preEl.style.opacity = '0';
-                setTimeout(() => { preEl.style.display = 'none'; startType(); }, 700);
-                return;
+        /* ── Starfield (subtle) ── */
+        (function () {
+            const c = document.getElementById('star-canvas'), x = c.getContext('2d');
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let stars = [];
+            function size() {
+                c.width = innerWidth; c.height = innerHeight;
+                stars = Array.from({ length: Math.min(140, Math.floor(innerWidth / 9)) }, () => ({
+                    x: Math.random() * c.width, y: Math.random() * c.height,
+                    r: Math.random() * 0.9 + 0.2, o: Math.random() * 0.3 + 0.05,
+                    s: (Math.random() * 0.006 + 0.002) * (Math.random() < 0.5 ? 1 : -1)
+                }));
             }
-            preW.style.opacity = '0';
-            setTimeout(() => {
-                preW.textContent = words[wi++];
-                preW.style.opacity = '1';
-                preB.style.width = ((wi / words.length) * 100) + '%';
-                setTimeout(showNext, wi === words.length ? 600 : 380);
-            }, 150);
-        }
-        setTimeout(showNext, 200);
+            size(); addEventListener('resize', size);
+            (function draw() {
+                x.clearRect(0, 0, c.width, c.height);
+                stars.forEach(s => {
+                    if (!reduce) { s.o += s.s; if (s.o > 0.4 || s.o < 0.04) s.s *= -1; }
+                    x.beginPath(); x.arc(s.x, s.y, s.r, 0, 6.2832);
+                    x.fillStyle = 'rgba(255,200,230,' + s.o + ')'; x.fill();
+                });
+                if (!reduce) requestAnimationFrame(draw);
+            })();
+        })();
 
-        /* ════════════════════
-           TYPEWRITER
-        ════════════════════ */
-        const roles = ['Aspiring Software Engineer', 'Web Developer', 'Frontend Developer', 'Full Stack Developer'];
-        let ri = 0, ci = 0, del = false;
-        const typeEl = document.getElementById('hero-type');
+        /* ── Preloader ── */
+        (function () {
+            const p = document.getElementById('preloader');
+            let done = false;
+            function hide() {
+                if (done) return; done = true;
+                p.style.opacity = '0';
+                setTimeout(() => { p.style.display = 'none'; startType(); }, 500);
+            }
+            setTimeout(hide, 1200);
+        })();
+
+        /* ── Typewriter ── */
+        const roles = ['AI Engineer', 'Aspiring Data Scientist', 'RAG & LLM Developer', 'Full-Stack Developer'];
         function startType() {
-            function tick() {
+            const el = document.getElementById('hero-type');
+            if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            let ri = 0, ci = roles[0].length, del = true;
+            (function tick() {
                 const r = roles[ri];
-                if (!del) { ci++; typeEl.textContent = r.slice(0, ci) + '|'; if (ci >= r.length) { del = true; setTimeout(tick, 1300); return; } }
-                else { ci--; typeEl.textContent = r.slice(0, ci) + '|'; if (ci <= 0) { del = false; ri = (ri + 1) % roles.length; setTimeout(tick, 280); return; } }
-                setTimeout(tick, del ? 50 : 80);
-            }
-            tick();
+                if (!del) { ci++; if (ci >= r.length) { del = true; el.textContent = r; return setTimeout(tick, 1500); } }
+                else { ci--; if (ci <= 0) { del = false; ri = (ri + 1) % roles.length; el.textContent = ''; return setTimeout(tick, 250); } }
+                el.textContent = r.slice(0, ci);
+                setTimeout(tick, del ? 45 : 75);
+            })();
         }
 
-        /* ════════════════════
-           NAV ACTIVE
-        ════════════════════ */
-        const allSecs = document.querySelectorAll('section[id]');
-        const navAs = document.querySelectorAll('.nav-links a');
-        window.addEventListener('scroll', () => {
-            let cur = '';
-            allSecs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-            navAs.forEach(a => a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--white)' : '');
+        /* ── Mobile nav ── */
+        const toggle = document.getElementById('nav-toggle'), links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            const open = links.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
         });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+        }));
 
-        /* ════════════════════
-           SKILLS GRID
-        ════════════════════ */
-        const skillData = [
-            { n: 'React.js', c: '#61DAFB', s: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.139" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2" cx="12" cy="12"/><ellipse rx="11" ry="4.2" cx="12" cy="12" transform="rotate(60 12 12)"/><ellipse rx="11" ry="4.2" cx="12" cy="12" transform="rotate(120 12 12)"/></g></svg>' },
-            { n: 'Next.js', c: '#fff', s: '<svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/></svg>' },
-            { n: 'JavaScript', c: '#F7DF1E', s: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#F7DF1E" rx="2"/><path d="M6.5 19.5l1.5-1c.3.6.6 1 1.3 1 .7 0 1.1-.3 1.1-1.4v-6h2v6.1c0 2.3-1.3 3.3-3.2 3.3-1.7 0-2.7-.9-3.2-2zm8-.5l1.5-1c.4.7 1 1.2 2 1.2.8 0 1.3-.4 1.3-1 0-.7-.5-.9-1.4-1.3l-.5-.2c-1.4-.6-2.3-1.4-2.3-3 0-1.5 1.1-2.7 2.9-2.7 1.3 0 2.2.5 2.8 1.6l-1.5 1c-.3-.6-.7-.8-1.3-.8-.6 0-1 .4-1 .8 0 .6.4.8 1.2 1.2l.5.2c1.7.7 2.6 1.5 2.6 3.1 0 1.8-1.4 2.8-3.3 2.8-1.8 0-3-.9-3.5-2.1z" fill="#333"/></svg>' },
-            { n: 'TypeScript', c: '#3178C6', s: '<svg viewBox="0 0 24 24"><rect width="24" height="24" fill="#3178C6" rx="2"/><path d="M3 12.5h6v1.5H7V20H5.5v-6H3zm11 0v1.3c-.5-.3-1-.5-1.6-.5-.9 0-1.4.4-1.4.9s.3.7 1.2 1.1l.4.2c1.6.6 2.4 1.4 2.4 2.8 0 1.7-1.3 2.7-3.2 2.7-1.2 0-2.1-.4-2.8-1l.9-1.2c.5.5 1.2.8 1.9.8 1 0 1.5-.5 1.5-1.1 0-.6-.3-.9-1.3-1.3l-.4-.2c-1.4-.6-2.1-1.4-2.1-2.7 0-1.5 1.2-2.5 3-2.5.9 0 1.8.3 2.5.7z" fill="white"/></svg>' },
-            { n: 'HTML', c: '#E34F26', s: '<svg viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157z"/></svg>' },
-            { n: 'CSS', c: '#1572B6', s: '<svg viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53z"/></svg>' },
-            { n: 'Node.js', c: '#339933', s: '<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 1.85c-.27 0-.55.07-.78.2L3.78 6.35C3.3 6.6 3 7.1 3 7.65v8.69c0 .56.3 1.06.78 1.33l7.44 4.29c.46.26 1.05.26 1.51 0l7.44-4.29c.48-.27.78-.77.78-1.33V7.65c0-.55-.3-1.05-.78-1.3L12.78 2.05c-.23-.13-.51-.2-.78-.2zm0 2.26l6.15 3.54v7.1L12 18.29l-6.15-3.54V7.65L12 4.11z"/></svg>' },
-            { n: 'Express', c: '#aaa', s: '<svg viewBox="0 0 24 24"><path d="M24 18.6c-.6.3-1 .2-1.4-.3L17 10.9v7.4H15.5V8h1.1l.3 1.4c1.3-1.8 2.8-2.2 4.4-1.4l-1.3 2c-.9-.4-1.8-.2-2.5.6l4.8 6.4 1.7-1zm-12.5-1c0 .8-.3 1.5-.8 2s-1.2.7-2.1.7c-1.6 0-2.6-.8-3-2.4l1.6-.5c.2.9.6 1.3 1.4 1.3.7 0 1.1-.4 1.1-1.1V8H11v9.6z" fill="#aaa"/></svg>' },
-            { n: 'MongoDB', c: '#47A248', s: '<svg viewBox="0 0 24 24" fill="#47A248"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.051-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/></svg>' },
-            { n: 'Python', c: '#3776AB', s: '<svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.961 3.403 5.961h2.031v-2.867s-.109-3.402 3.35-3.402h5.769s3.24.052 3.24-3.131V3.129S18.28 0 11.914 0zM8.708 1.81a1.051 1.051 0 110 2.1 1.051 1.051 0 010-2.1z" fill="#3776AB"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.1S24 18.211 24 12.031c0-6.18-3.403-5.961-3.403-5.961h-2.031v2.867s.109 3.402-3.35 3.402H9.447S6.207 12.287 6.207 15.47v5.401S5.72 24 12.086 24zm3.206-1.81a1.051 1.051 0 110-2.1 1.051 1.051 0 010 2.1z" fill="#ffd43b"/></svg>' },
-            { n: 'Git', c: '#F05032', s: '<svg viewBox="0 0 24 24" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>' },
-            { n: 'AWS', c: '#FF9900', s: '<svg viewBox="0 0 24 24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335c-.128.088-.208.12-.287.12-.112 0-.224-.056-.336-.176a3.44 3.44 0 01-.287-.375 6.18 6.18 0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.368-1.3-.368-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 01-.28.104.488.488 0 01-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 01.224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 011.246-.151c.95 0 1.644.216 2.091.647.44.43.663 1.085.663 1.963zm17.3 6.744c-2.43 1.794-5.96 2.75-9 2.75-4.255 0-8.088-1.573-10.985-4.189-.228-.206-.024-.487.251-.326 3.128 1.818 6.997 2.914 10.993 2.914 2.695 0 5.659-.559 8.386-1.72.407-.184.752.267.355.571z" fill="#FF9900"/><path d="M20.905 14.063c-.311-.399-2.053-.192-2.845-.097-.238.03-.273-.178-.06-.334 1.388-.977 3.669-.694 3.934-.368.266.333-.073 2.614-1.375 3.708-.198.17-.391.08-.302-.14.295-.732.955-2.37.648-2.769z" fill="#FF9900"/></svg>' },
-            { n: 'Socket.io', c: '#fff', s: '<svg viewBox="0 0 24 24" fill="white"><path d="M11.9 2C6.4 2 2 6.5 2 12s4.4 10 9.9 10c5.5 0 10-4.5 10-10S17.4 2 11.9 2zm-.2 4.3l-5.1 7.8h4.5l-.7 3.7 5.1-7.8h-4.4l.6-3.7z"/></svg>' },
-            { n: 'Leaflet', c: '#199900', s: '<svg viewBox="0 0 24 24" fill="#199900"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>' },
-            { n: 'SQL', c: '#4479A1', s: '<svg viewBox="0 0 24 24" fill="#4479A1"><path d="M12 3C7.59 3 4 4.34 4 6v12c0 1.66 3.59 3 8 3s8-1.34 8-3V6c0-1.66-3.59-3-8-3zm0 1.5c3.87 0 6.5 1.12 6.5 1.5S15.87 7.5 12 7.5 5.5 6.38 5.5 6s2.63-1.5 6.5-1.5zm0 15c-3.87 0-6.5-1.12-6.5-1.5v-1.76c1.34.87 3.84 1.26 6.5 1.26s5.16-.39 6.5-1.26V18c0 .38-2.63 1.5-6.5 1.5zm0-4.5c-3.87 0-6.5-1.12-6.5-1.5v-1.76C6.84 12.61 9.34 13 12 13s5.16-.39 6.5-1.26V13.5c0 .38-2.63 1.5-6.5 1.5zm0-4.5c-3.87 0-6.5-1.12-6.5-1.5V7.74C6.84 8.61 9.34 9 12 9s5.16-.39 6.5-1.26V9c0 .38-2.63 1.5-6.5 1.5z"/></svg>' },
-            { n: 'Java', c: '#ED8B00', s: '<svg viewBox="0 0 24 24" fill="#ED8B00"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149m-.575-2.627s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218m4.84-4.458c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573"/></svg>' },
-        ];
-        const sg = document.getElementById('skills-grid');
-        skillData.forEach(s => {
-            const d = document.createElement('div');
-            d.className = 'skill-item';
-            d.innerHTML = s.s + '<span>' + s.n + '</span>';
-            sg.appendChild(d);
-        });
+        /* ── Active nav link ── */
+        const navAs = [...links.querySelectorAll('a')];
+        const secs = navAs.map(a => document.querySelector(a.getAttribute('href')));
+        function setActive() {
+            let cur = -1;
+            secs.forEach((s, i) => { if (s && scrollY >= s.offsetTop - 140) cur = i; });
+            navAs.forEach((a, i) => a.classList.toggle('active', i === cur));
+            document.getElementById('to-top').classList.toggle('show', scrollY > 600);
+        }
+        addEventListener('scroll', setActive, { passive: true }); setActive();
+        document.getElementById('to-top').addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
-        /* ════════════════════
-           PROJECT CANVAS DRAWS
-        ════════════════════ */
-        function rr(ctx, x, y, w, h, r) {
-            ctx.beginPath(); ctx.moveTo(x + r, y); ctx.lineTo(x + w - r, y); ctx.arcTo(x + w, y, x + w, y + r, r);
-            ctx.lineTo(x + w, y + h - r); ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
-            ctx.lineTo(x + r, y + h); ctx.arcTo(x, y + h, x, y + h - r, r);
-            ctx.lineTo(x, y + r); ctx.arcTo(x, y, x + r, y, r); ctx.closePath();
-        }
-        function drawSwipe(cv) {
-            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
-            c.fillStyle = '#1a2035'; c.fillRect(0, 0, W, H);
-            const g = c.createRadialGradient(W * .7, H * .3, 10, W * .7, H * .3, 180);
-            g.addColorStop(0, 'rgba(155,48,208,0.1)'); g.addColorStop(1, 'transparent');
-            c.fillStyle = g; c.fillRect(0, 0, W, H);
-            const px = W * .38, py = H * .06, pw = W * .23, ph = H * .78;
-            c.fillStyle = '#111'; rr(c, px, py, pw, ph, 16); c.fill();
-            c.strokeStyle = '#333'; c.lineWidth = 1.5; rr(c, px, py, pw, ph, 16); c.stroke();
-            c.fillStyle = '#fff'; rr(c, px + 5, py + 16, pw - 10, ph - 32, 7); c.fill();
-            [[px + 10, py + 28, '#ffb5c8', pw - 36], [px + 20, py + 58, '#c8e6ff', pw - 36], [px + 10, py + 88, '#ffb5c8', pw - 42], [px + 20, py + 118, '#c8e6ff', pw - 38]].forEach(([x, y, col, w2]) => { c.fillStyle = col; rr(c, x, y, w2, 18, 7); c.fill(); });
-            ['#ff2d78', '#ff6eb4', '#e040fb'].forEach((col, i) => { c.fillStyle = col; c.font = '15px serif'; c.fillText('♥', W * .3 + i * 20, H * .11 + i * 7); });
-            c.fillStyle = '#fff'; c.font = 'bold 19px Inter,sans-serif'; c.textAlign = 'center'; c.fillText('SWIPEVERSE', W / 2, H * .88);
-            c.fillStyle = 'rgba(255,255,255,0.45)'; c.font = '9px Inter'; c.fillText('UNBIASED DATING APP', W / 2, H * .94);
-        }
-        function drawLaz(cv) {
-            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
-            c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
-            c.strokeStyle = 'rgba(255,255,255,0.12)'; c.lineWidth = 1; c.beginPath(); c.moveTo(0, 38); c.lineTo(W, 38); c.stroke();
-            c.fillStyle = '#fff'; c.font = 'bold 13px Inter'; c.textAlign = 'left'; c.fillText('LAZAREV.', 20, 24);
-            c.font = 'bold 46px Georgia,serif'; c.fillText('AI & ML PR', 20, 115);
-            c.fillStyle = '#22c55e'; c.beginPath(); c.arc(268, 94, 26, 0, Math.PI * 2); c.fill();
-            c.fillStyle = '#fff'; c.font = '18px sans-serif'; c.textAlign = 'center'; c.fillText('✏', 268, 102);
-            c.font = 'bold 46px Georgia,serif'; c.textAlign = 'left'; c.fillText('ODUCT', 290, 115);
-            c.fillText('DESIGN AGENCY', 20, 170);
-            c.fillStyle = 'rgba(255,255,255,0.4)'; c.font = '11px Inter'; c.textAlign = 'center';
-            c.fillText('We partner with AI & ML businesses', W / 2, 208);
-        }
-        function drawMap(cv) {
-            const c = cv.getContext('2d'), W = cv.width, H = cv.height;
-            c.fillStyle = '#e8e0d0'; c.fillRect(0, 0, W, H);
-            c.fillStyle = '#a8d4e8'; c.fillRect(0, H * .62, W * .16, H * .38); c.fillRect(W * .58, H * .5, W * .42, H * .5);
-            c.fillStyle = '#d4e8c0'; c.fillRect(W * .1, H * .1, W * .34, H * .42); c.fillRect(W * .5, H * .05, W * .44, H * .55);
-            c.strokeStyle = 'rgba(255,255,255,0.45)'; c.lineWidth = 0.7;
-            for (let i = 0; i < 8; i++) { c.beginPath(); c.moveTo(0, i * H / 7); c.lineTo(W, i * H / 7); c.stroke(); }
-            for (let i = 0; i < 10; i++) { c.beginPath(); c.moveTo(i * W / 9, 0); c.lineTo(i * W / 9, H); c.stroke(); }
-            c.fillStyle = 'rgba(80,60,40,0.5)'; c.font = '9px sans-serif'; c.textAlign = 'center';
-            [['India', W * .65, H * .62], ['Pakistan', W * .28, H * .35], ['New Delhi', W * .5, H * .52]].forEach(([t, x, y]) => c.fillText(t, x, y));
-            const px = W * .5, py = H * .44;
-            c.fillStyle = '#e53935'; c.beginPath(); c.arc(px, py - 13, 12, 0, Math.PI * 2); c.fill();
-            c.beginPath(); c.moveTo(px - 10, py - 13); c.lineTo(px + 10, py - 13); c.lineTo(px, py + 4); c.fill();
-            c.fillStyle = '#fff'; c.beginPath(); c.arc(px, py - 15, 5, 0, Math.PI * 2); c.fill();
-            c.fillStyle = 'rgba(255,255,255,0.92)'; rr(c, 4, 4, 122, 24, 5); c.fill();
-            c.fillStyle = '#333'; c.font = 'bold 11px Inter'; c.textAlign = 'left'; c.fillText('Active Users: 1', 10, 20);
-        }
-        drawSwipe(document.getElementById('pc0'));
-        drawLaz(document.getElementById('pc1'));
-        drawMap(document.getElementById('pc2'));
+        /* ── Scroll reveal ── */
+        const io = new IntersectionObserver(es => es.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }), { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        /* ════════════════════
-           PROJECT CAROUSEL
-        ════════════════════ */
-        let curP = 0;
-        const slides = document.querySelectorAll('.proj-slide');
-        const dotsC = document.getElementById('pdots');
-        const countEl = document.getElementById('pcount');
-        dotsC.innerHTML = [0, 1, 2].map(i => `<div class="proj-dot${i === 0 ? ' on' : ''}" data-i="${i}"></div>`).join('');
-        dotsC.querySelectorAll('.proj-dot').forEach(d => d.addEventListener('click', () => goP(+d.dataset.i)));
-        function goP(n) {
-            slides[curP].classList.remove('on'); curP = n; slides[curP].classList.add('on');
-            dotsC.querySelectorAll('.proj-dot').forEach((d, i) => d.classList.toggle('on', i === curP));
-            countEl.innerHTML = `<strong>${String(curP + 1).padStart(2, '0')}</strong> / 03`;
-        }
-        document.getElementById('pn').onclick = () => goP((curP + 1) % 3);
-        document.getElementById('pp').onclick = () => goP((curP + 2) % 3);
-
-        /* ════════════════════
-           EXPERIENCE TIMELINE
-        ════════════════════ */
-        const tlOuter = document.getElementById('tl-outer');
-        if (tlOuter) {
-            const io = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    io.disconnect();
-                    const fill = document.getElementById('tlf');
-                    const d1 = document.getElementById('tld1');
-                    const d2 = document.getElementById('tld2');
-                    const c1 = document.getElementById('tlc1');
-                    const c2 = document.getElementById('tlc2');
-                    setTimeout(() => fill.style.width = '28%', 200);
-                    setTimeout(() => { d1.classList.add('lit'); c1.classList.add('show'); }, 900);
-                    setTimeout(() => fill.style.width = '80%', 1400);
-                    setTimeout(() => { d2.classList.add('lit'); c2.classList.add('show'); }, 2100);
-                }
-            }, { threshold: 0.3 });
-            io.observe(tlOuter);
-        }
-
-        /* ════════════════════
-           MUSIC
-        ════════════════════ */
-        let playing = false, osc = null, gain = null, actx = null;
-        document.getElementById('mbtn').addEventListener('click', () => {
-            if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
-            if (!playing) {
-                gain = actx.createGain(); gain.gain.value = 0.05; gain.connect(actx.destination);
-                osc = actx.createOscillator(); osc.type = 'sine'; osc.frequency.value = 220;
-                osc.connect(gain); osc.start(); playing = true;
-                document.getElementById('mbtn').textContent = '⏸';
-            } else {
-                osc.stop(); playing = false;
-                document.getElementById('mbtn').textContent = '▶';
-            }
+        /* ── Contact form → opens the visitor's mail client ── */
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const f = new FormData(e.target);
+            const subject = encodeURIComponent('[Portfolio] ' + f.get('topic') + ' — ' + f.get('name'));
+            const body = encodeURIComponent(f.get('message') + '\n\n— ' + f.get('name') + ' (' + f.get('email') + ')');
+            location.href = 'mailto:anjaliaggarwal1703@gmail.com?subject=' + subject + '&body=' + body;
         });
     </script>
 </body>
